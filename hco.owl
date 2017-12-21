@@ -1,0 +1,515 @@
+@prefix rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix owl:  <http://www.w3.org/2002/07/owl#> .
+@prefix xsd:  <http://www.w3.org/2001/XMLSchema#> .
+@prefix dct:  <http://purl.org/dc/terms/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix obo:  <http://purl.obolibrary.org/obo/> .
+@prefix hco:  <http://identifiers.org/hco/> .
+
+# Human chromosome classes
+
+hco:HumanChromosome
+	rdfs:label	"Human chromosome" ;
+	rdfs:comment	"Collection of human chromosomes" ;
+	rdfs:seeAlso	<http://identifiers.org/taxonomy/9606> ;
+	rdfs:subClassOf	obo:SO_0000340 .    # chromosome
+
+hco:GenomeBuild
+	rdfs:label	"Version of a genome assembly" ;
+	rdf:type	obo:SO_0001505 .    # reference_genome
+
+hco:build
+	rdfs:label	"build" ;
+	rdfs:domain	hco:HumanChromosome ;
+	rdfs:range	hco:GenomeBuild .
+
+hco:GRCh37.p13
+	rdfs:label	"GRCh37.p13" ;
+	rdfs:comment	"Genome Reference Consortium Human Build 37 patch release 13" ;
+	skos:altLabel	"hg19" ;
+	hco:length	3234834689 ;
+	dct:date	"2013-06-28"^^xsd:date ;
+	rdfs:seeAlso	<https://www.ncbi.nlm.nih.gov/assembly/GCF_000001405.25> ;
+	rdf:type	hco:GenomeBuild .
+
+hco:GRCh38.p7
+	rdfs:label	"GRCh38.p7" ;
+	rdfs:comment	"Genome Reference Consortium Human Build 38 patch release 7" ;
+	skos:altLabel	"hg38" ;
+	hco:length	3232546710 ;
+	dct:date	"2016-03-21"^^xsd:date ;
+	rdfs:seeAlso	<https://www.ncbi.nlm.nih.gov/assembly/GCF_000001405.33> ;
+	rdf:type	hco:GenomeBuild .
+
+hco:GRCh38.p10
+	rdfs:label	"GRCh38.p10" ;
+	rdfs:comment	"Genome Reference Consortium Human Build 38 patch release 10" ;
+	skos:altLabel	"hg38" ;
+	hco:length	3241953429 ;
+	dct:date	"2017-01-06"^^xsd:date ;
+	rdfs:seeAlso	<https://www.ncbi.nlm.nih.gov/assembly/GCF_000001405.36> ;
+	rdf:type	hco:GenomeBuild .
+
+hco:GRCh38.p11
+	rdfs:label	"GRCh38.p11" ;
+	rdfs:comment	"Genome Reference Consortium Human Build 38 patch release 11" ;
+	skos:altLabel	"hg38" ;
+	hco:length	3253848404 ;
+	dct:date	"2017-06-14"^^xsd:date ;
+	rdfs:seeAlso	<https://www.ncbi.nlm.nih.gov/assembly/GCF_000001405.37> ;
+	rdf:type	hco:GenomeBuild .
+
+
+hco:1
+	rdfs:label	"Human chromosome 1" ;
+	rdfs:subClassOf	hco:HumanChromosome .
+
+hco:2
+	rdfs:label	"Human chromosome 2" ;
+	rdfs:subClassOf	hco:HumanChromosome .
+
+hco:3
+	rdfs:label	"Human chromosome 3" ;
+	rdfs:subClassOf	hco:HumanChromosome .
+
+hco:4
+	rdfs:label	"Human chromosome 4" ;
+	rdfs:subClassOf	hco:HumanChromosome .
+
+hco:5
+	rdfs:label	"Human chromosome 5" ;
+	rdfs:subClassOf	hco:HumanChromosome .
+
+hco:6
+	rdfs:label	"Human chromosome 6" ;
+	rdfs:subClassOf	hco:HumanChromosome .
+
+hco:7
+	rdfs:label	"Human chromosome 7" ;
+	rdfs:subClassOf	hco:HumanChromosome .
+
+hco:8
+	rdfs:label	"Human chromosome 8" ;
+	rdfs:subClassOf	hco:HumanChromosome .
+
+hco:9
+	rdfs:label	"Human chromosome 9" ;
+	rdfs:subClassOf	hco:HumanChromosome .
+
+hco:10
+	rdfs:label	"Human chromosome 110" ;
+	rdfs:subClassOf	hco:HumanChromosome .
+
+hco:11
+	rdfs:label	"Human chromosome 111" ;
+	rdfs:subClassOf	hco:HumanChromosome .
+
+hco:12
+	rdfs:label	"Human chromosome 112" ;
+	rdfs:subClassOf	hco:HumanChromosome .
+
+hco:13
+	rdfs:label	"Human chromosome 113" ;
+	rdfs:subClassOf	hco:HumanChromosome .
+
+hco:14
+	rdfs:label	"Human chromosome 114" ;
+	rdfs:subClassOf	hco:HumanChromosome .
+
+hco:15
+	rdfs:label	"Human chromosome 115" ;
+	rdfs:subClassOf	hco:HumanChromosome .
+
+hco:16
+	rdfs:label	"Human chromosome 116" ;
+	rdfs:subClassOf	hco:HumanChromosome .
+
+hco:17
+	rdfs:label	"Human chromosome 117" ;
+	rdfs:subClassOf	hco:HumanChromosome .
+
+hco:18
+	rdfs:label	"Human chromosome 118" ;
+	rdfs:subClassOf	hco:HumanChromosome .
+
+hco:19
+	rdfs:label	"Human chromosome 119" ;
+	rdfs:subClassOf	hco:HumanChromosome .
+
+hco:20
+	rdfs:label	"Human chromosome 220" ;
+	rdfs:subClassOf	hco:HumanChromosome .
+
+hco:21
+	rdfs:label	"Human chromosome 221" ;
+	rdfs:subClassOf	hco:HumanChromosome .
+
+hco:22
+	rdfs:label	"Human chromosome 222" ;
+	rdfs:subClassOf	hco:HumanChromosome .
+
+hco:X
+	rdfs:label	"Human chromosome X" ;
+	rdfs:subClassOf	hco:HumanChromosome .
+
+hco:Y
+	rdfs:label	"Human chromosome Y" ;
+	rdfs:subClassOf	hco:HumanChromosome .
+
+hco:MT
+	rdfs:label	"Human mitochondrion genome" ;
+	rdfs:subClassOf	hco:HumanChromosome .
+
+# Human chromosome instances
+
+hco:1/GRCh37.p13
+	rdf:type	hco:1 ;
+	hco:build	hco:GRCh37.p13 ;
+	hco:length	249250621 ;
+	skos:altLabel	"GPC_000000025" ;
+	hco:refseq	<http://identifiers.org/refseq/NC_000001.10> .
+
+hco:2/GRCh37.p13
+	rdf:type	hco:2 ;
+	hco:build	hco:GRCh37.p13 ;
+	hco:length	243199373 ;
+	skos:altLabel	"GPC_000000026" ;
+	hco:refseq	<http://identifiers.org/refseq/NC_000002.11> .
+
+hco:3/GRCh37.p13
+	rdf:type	hco:3 ;
+	hco:build	hco:GRCh37.p13 ;
+	hco:length	198022430 ;
+	skos:altLabel	"GPC_000000027" ;
+	hco:refseq	<http://identifiers.org/refseq/NC_000003.11> .
+
+hco:4/GRCh37.p13
+	rdf:type	hco:4 ;
+	hco:build	hco:GRCh37.p13 ;
+	hco:length	191154276 ;
+	skos:altLabel	"GPC_000000028" ;
+	hco:refseq	<http://identifiers.org/refseq/NC_000004.11> .
+
+hco:5/GRCh37.p13
+	rdf:type	hco:5 ;
+	hco:build	hco:GRCh37.p13 ;
+	hco:length	180915260 ;
+	skos:altLabel	"GPC_000000029" ;
+	hco:refseq	<http://identifiers.org/refseq/NC_000005.9> .
+
+hco:6/GRCh37.p13
+	rdf:type	hco:6 ;
+	hco:build	hco:GRCh37.p13 ;
+	hco:length	171115067 ;
+	skos:altLabel	"GPC_000000030" ;
+	hco:refseq	<http://identifiers.org/refseq/NC_000006.11> .
+
+hco:7/GRCh37.p13
+	rdf:type	hco:7 ;
+	hco:build	hco:GRCh37.p13 ;
+	hco:length	159138663 ;
+	skos:altLabel	"GPC_000000031" ;
+	hco:refseq	<http://identifiers.org/refseq/NC_000007.13> .
+
+hco:8/GRCh37.p13
+	rdf:type	hco:8 ;
+	hco:build	hco:GRCh37.p13 ;
+	hco:length	146364022 ;
+	skos:altLabel	"GPC_000000032" ;
+	hco:refseq	<http://identifiers.org/refseq/NC_000008.10> .
+
+hco:9/GRCh37.p13
+	rdf:type	hco:9 ;
+	hco:build	hco:GRCh37.p13 ;
+	hco:length	141213431 ;
+	skos:altLabel	"GPC_000000033" ;
+	hco:refseq	<http://identifiers.org/refseq/NC_000009.11> .
+
+hco:10/GRCh37.p13
+	rdf:type	hco:10 ;
+	hco:build	hco:GRCh37.p13 ;
+	hco:length	135534747 ;
+	skos:altLabel	"GPC_000000034" ;
+	hco:refseq	<http://identifiers.org/refseq/NC_000010.10> .
+
+hco:11/GRCh37.p13
+	rdf:type	hco:11 ;
+	hco:build	hco:GRCh37.p13 ;
+	hco:length	135006516 ;
+	skos:altLabel	"GPC_000000035" ;
+	hco:refseq	<http://identifiers.org/refseq/NC_000011.9> .
+
+hco:12/GRCh37.p13
+	rdf:type	hco:12 ;
+	hco:build	hco:GRCh37.p13 ;
+	hco:length	133851895 ;
+	skos:altLabel	"GPC_000000036" ;
+	hco:refseq	<http://identifiers.org/refseq/NC_000012.11> .
+
+hco:13/GRCh37.p13
+	rdf:type	hco:13 ;
+	hco:build	hco:GRCh37.p13 ;
+	hco:length	115169878 ;
+	skos:altLabel	"GPC_000000037" ;
+	hco:refseq	<http://identifiers.org/refseq/NC_000013.10> .
+
+hco:14/GRCh37.p13
+	rdf:type	hco:14 ;
+	hco:build	hco:GRCh37.p13 ;
+	hco:length	107349540 ;
+	skos:altLabel	"GPC_000000038" ;
+	hco:refseq	<http://identifiers.org/refseq/NC_000014.8> .
+
+hco:15/GRCh37.p13
+	rdf:type	hco:15 ;
+	hco:build	hco:GRCh37.p13 ;
+	hco:length	102531392 ;
+	skos:altLabel	"GPC_000000039" ;
+	hco:refseq	<http://identifiers.org/refseq/NC_000015.9> .
+
+hco:16/GRCh37.p13
+	rdf:type	hco:16 ;
+	hco:build	hco:GRCh37.p13 ;
+	hco:length	 90354753 ;
+	skos:altLabel	 "GPC_000000040" ;
+	hco:refseq	<http://identifiers.org/refseq/NC_000016.9> .
+
+hco:17/GRCh37.p13
+	rdf:type	hco:17 ;
+	hco:build	hco:GRCh37.p13 ;
+	hco:length	 81195210 ;
+	skos:altLabel	 "GPC_000000041" ;
+	hco:refseq	<http://identifiers.org/refseq/NC_000017.10> .
+
+hco:18/GRCh37.p13
+	rdf:type	hco:18 ;
+	hco:build	hco:GRCh37.p13 ;
+	hco:length	 78077248 ;
+	skos:altLabel	 "GPC_000000042" ;
+	hco:refseq	<http://identifiers.org/refseq/NC_000018.9> .
+
+hco:19/GRCh37.p13
+	rdf:type	hco:19 ;
+	hco:build	hco:GRCh37.p13 ;
+	hco:length	 59128983 ;
+	skos:altLabel	 "GPC_000000043" ;
+	hco:refseq	<http://identifiers.org/refseq/NC_000019.9> .
+
+hco:20/GRCh37.p13
+	rdf:type	hco:20 ;
+	hco:build	hco:GRCh37.p13 ;
+	hco:length	 63025520 ;
+	skos:altLabel	 "GPC_000000044" ;
+	hco:refseq	<http://identifiers.org/refseq/NC_000020.10> .
+
+hco:21/GRCh37.p13
+	rdf:type	hco:21 ;
+	hco:build	hco:GRCh37.p13 ;
+	hco:length	 48129895 ;
+	skos:altLabel	 "GPC_000000045" ;
+	hco:refseq	<http://identifiers.org/refseq/NC_000021.8> .
+
+hco:22/GRCh37.p13
+	rdf:type	hco:22 ;
+	hco:build	hco:GRCh37.p13 ;
+	hco:length	 51304566 ;
+	skos:altLabel	 "GPC_000000046" ;
+	hco:refseq	<http://identifiers.org/refseq/NC_000022.10> .
+
+hco:X/GRCh37.p13
+	rdf:type	hco:X ;
+	hco:build	hco:GRCh37.p13 ;
+	hco:length	155270560 ;
+	skos:altLabel	"GPC_000000047" ;
+	hco:refseq	<http://identifiers.org/refseq/NC_000023.10> .
+
+hco:Y/GRCh37.p13
+	rdf:type	hco:Y ;
+	hco:build	hco:GRCh37.p13 ;
+	hco:length	 59373566 ;
+	skos:altLabel	 "GPC_000000048" ;
+	hco:refseq	<http://identifiers.org/refseq/NC_000024.9> .
+
+hco:1/GRCh38.p7
+	rdf:type	hco:1 ;
+	hco:build	hco:GRCh38.p7 ;
+	hco:length	248956422 ;
+	skos:altLabel	"GPC_000001293" ;
+	hco:refseq	<http://identifiers.org/refseq/NC_000001.11> .
+
+hco:2/GRCh38.p7
+	rdf:type	hco:2 ;
+	hco:build	hco:GRCh38.p7 ;
+	hco:length	242193529 ;
+	skos:altLabel	"GPC_000001294" ;
+	hco:refseq	<http://identifiers.org/refseq/NC_000002.12> .
+
+hco:3/GRCh38.p7
+	rdf:type	hco:3 ;
+	hco:build	hco:GRCh38.p7 ;
+	hco:length	198295559 ;
+	skos:altLabel	"GPC_000001295" ;
+	hco:refseq	<http://identifiers.org/refseq/NC_000003.12> .
+
+hco:4/GRCh38.p7
+	rdf:type	hco:4 ;
+	hco:build	hco:GRCh38.p7 ;
+	hco:length	190214555 ;
+	skos:altLabel	"GPC_000001296" ;
+	hco:refseq	<http://identifiers.org/refseq/NC_000004.12> .
+
+hco:5/GRCh38.p7
+	rdf:type	hco:5 ;
+	hco:build	hco:GRCh38.p7 ;
+	hco:length	181538259 ;
+	skos:altLabel	"GPC_000001297" ;
+	hco:refseq	<http://identifiers.org/refseq/NC_000005.10> .
+
+hco:6/GRCh38.p7
+	rdf:type	hco:6 ;
+	hco:build	hco:GRCh38.p7 ;
+	hco:length	170805979 ;
+	skos:altLabel	"GPC_000001298" ;
+	hco:refseq	<http://identifiers.org/refseq/NC_000006.12> .
+
+hco:7/GRCh38.p7
+	rdf:type	hco:7 ;
+	hco:build	hco:GRCh38.p7 ;
+	hco:length	159345973 ;
+	skos:altLabel	"GPC_000001299" ;
+	hco:refseq	<http://identifiers.org/refseq/NC_000007.14> .
+
+hco:8/GRCh38.p7
+	rdf:type	hco:8 ;
+	hco:build	hco:GRCh38.p7 ;
+	hco:length	145138636 ;
+	skos:altLabel	"GPC_000001300" ;
+	hco:refseq	<http://identifiers.org/refseq/NC_000008.11> .
+
+hco:9/GRCh38.p7
+	rdf:type	hco:9 ;
+	hco:build	hco:GRCh38.p7 ;
+	hco:length	138394717 ;
+	skos:altLabel	"GPC_000001301" ;
+	hco:refseq	<http://identifiers.org/refseq/NC_000009.12> .
+
+hco:1/GRCh38.p7
+	rdf:type	hco:1 ;
+	hco:build	hco:GRCh38.p7 ;
+	hco:length	133797422 ;
+	skos:altLabel	"GPC_000001302" ;
+	hco:refseq	<http://identifiers.org/refseq/NC_000010.11> .
+
+hco:1/GRCh38.p7
+	rdf:type	hco:1 ;
+	hco:build	hco:GRCh38.p7 ;
+	hco:length	135086622 ;
+	skos:altLabel	"GPC_000001303" ;
+	hco:refseq	<http://identifiers.org/refseq/NC_000011.10> .
+
+hco:1/GRCh38.p7
+	rdf:type	hco:1 ;
+	hco:build	hco:GRCh38.p7 ;
+	hco:length	133275309 ;
+	skos:altLabel	"GPC_000001304" ;
+	hco:refseq	<http://identifiers.org/refseq/NC_000012.12> .
+
+hco:1/GRCh38.p7
+	rdf:type	hco:1 ;
+	hco:build	hco:GRCh38.p7 ;
+	hco:length	114364328 ;
+	skos:altLabel	"GPC_000001305" ;
+	hco:refseq	<http://identifiers.org/refseq/NC_000013.11> .
+
+hco:1/GRCh38.p7
+	rdf:type	hco:1 ;
+	hco:build	hco:GRCh38.p7 ;
+	hco:length	107043718 ;
+	skos:altLabel	"GPC_000001306" ;
+	hco:refseq	<http://identifiers.org/refseq/NC_000014.9> .
+
+hco:1/GRCh38.p7
+	rdf:type	hco:1 ;
+	hco:build	hco:GRCh38.p7 ;
+	hco:length	101991189 ;
+	skos:altLabel	"GPC_000001307" ;
+	hco:refseq	<http://identifiers.org/refseq/NC_000015.10> .
+
+hco:1/GRCh38.p7
+	rdf:type	hco:1 ;
+	hco:build	hco:GRCh38.p7 ;
+	hco:length	 90338345 ;
+	skos:altLabel	 "GPC_000001308" ;
+	hco:refseq	 <http://identifiers.org/refseq/NC_000016.10> .
+
+hco:1/GRCh38.p7
+	rdf:type	hco:1 ;
+	hco:build	hco:GRCh38.p7 ;
+	hco:length	 83257441 ;
+	skos:altLabel	 "GPC_000001309" ;
+	hco:refseq	 <http://identifiers.org/refseq/NC_000017.11> .
+
+hco:1/GRCh38.p7
+	rdf:type	hco:1 ;
+	hco:build	hco:GRCh38.p7 ;
+	hco:length	 80373285 ;
+	skos:altLabel	 "GPC_000001310" ;
+	hco:refseq	 <http://identifiers.org/refseq/NC_000018.10> .
+
+hco:1/GRCh38.p7
+	rdf:type	hco:1 ;
+	hco:build	hco:GRCh38.p7 ;
+	hco:length	 58617616 ;
+	skos:altLabel	 "GPC_000001311" ;
+	hco:refseq	 <http://identifiers.org/refseq/NC_000019.10> .
+
+hco:2/GRCh38.p7
+	rdf:type	hco:2 ;
+	hco:build	hco:GRCh38.p7 ;
+	hco:length	 64444167 ;
+	skos:altLabel	 "GPC_000001312" ;
+	hco:refseq	 <http://identifiers.org/refseq/NC_000020.11> .
+
+hco:2/GRCh38.p7
+	rdf:type	hco:2 ;
+	hco:build	hco:GRCh38.p7 ;
+	hco:length	 46709983 ;
+	skos:altLabel	 "GPC_000001313" ;
+	hco:refseq	 <http://identifiers.org/refseq/NC_000021.9> .
+
+hco:2/GRCh38.p7
+	rdf:type	hco:2 ;
+	hco:build	hco:GRCh38.p7 ;
+	hco:length	 50818468 ;
+	skos:altLabel	 "GPC_000001314" ;
+	hco:refseq	 <http://identifiers.org/refseq/NC_000022.11> .
+
+hco:X/GRCh38.p7
+	rdf:type	hco:X ;
+	hco:build	hco:GRCh38.p7 ;
+	hco:length	156040895 ;
+	skos:altLabel	"GPC_000001315" ;
+	hco:refseq	<http://identifiers.org/refseq/NC_000023.11> .
+
+hco:Y/GRCh38.p7
+	rdf:type	hco:Y ;
+	hco:build	hco:GRCh38.p7 ;
+	hco:length	 57227415 ;
+	skos:altLabel	 "GPC_000001316" ;
+	hco:refseq	 <http://identifiers.org/refseq/NC_000024.10> .
+
+# Mitochondrion (TODO: need build version?)
+
+hco:MT/GRCh37.p13
+	rdf:type	hco:MT ;
+	hco:length	16569 ;
+	skos:altLabel	"AC_000021" ;
+	hco:refseq	<http://identifiers.org/refseq/NC_012920.1> .
+
+hco:MT/GRCh38.p7
+	rdf:type	hco:MT ;
+	hco:length	16569 ;
+	skos:altLabel	"AC_000021" ;
+	hco:refseq	<http://identifiers.org/refseq/NC_012920.1> .
+

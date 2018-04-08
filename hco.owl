@@ -53,6 +53,52 @@ hco:bandcolor
 	rdfs:domain	hco:Cytoband ;
 	rdfs:range	xsd:string .
 
+# G-banding annotation
+
+hco:GbandingAnnotation
+        rdf:type        owl:class ;
+        rdfs:label      "G-banding annotation" .
+
+hco:Acen
+        rdfs:type       hco:GbandingAnnotation ;
+        rdfs:label      "acen" ;
+        skos:definition "Centromeric region" .
+
+hco:Gneg
+        rdfs:type       hco:GbandingAnnotation ;
+        rdfs:label      "gneg" ;
+        skos:definition "Giemsa negative band"@en .
+
+hco:Gpos100
+        rdfs:type       hco:GbandingAnnotation ;
+        rdfs:label      "gpos100" ;
+        skos:definition "Giemsa positive band, the darkest stain level"@en .
+
+hco:Gpos25
+        rdfs:type       hco:GbandingAnnotation ;
+        rdfs:label      "gpos25" ;
+        skos:definition "Giemsa positive band, the lightest stain level"@en .
+
+hco:Gpos50
+        rdfs:type       hco:GbandingAnnotation ;
+        rdfs:label      "gpos50" ;
+        skos:definition "Giemsa positive band, the second lightest stain level"@en .
+
+hco:Gpos75
+        rdfs:type       hco:GbandingAnnotation ;
+        rdfs:label      "gpos75" ;
+        skos:definition "Giemsa positive band, the second darkest stain level"@en .
+
+hco:Gvar
+        rdfs:type       hco:GbandingAnnotation ;
+        rdfs:label      "gvar" ;
+        rdfs:definition "Variable length heterochromatic region."@en .
+
+hco:Stalk
+        rdfs:type       hco:GbandingAnnotation ;
+        rdfs:label      "stalk" ;
+        skos:definition "Short arm of the acrocentric chromosomes."@en .
+        
 # Human chromosome classes
 
 hco:1

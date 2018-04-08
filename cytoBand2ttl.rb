@@ -7,6 +7,17 @@
 
 hash = {}
 
+cytoband_type = {
+  "acen" => "hco:Acen",
+  "gneg" => "hco:Gneg",
+  "gpos100" => "hco:Gpos100",
+  "gpos25" => "hco:Gpos25",
+  "gpos50" => "hco:Gpos50",
+  "gpos75" => "hco:Gpos75",
+  "gvar" => "hco:Gvar",
+  "stalk" => "hco:Stalk",
+}
+
 versions = [ "GRCh37", "GRCh38" ]
 
 versions.each do |ver|
@@ -47,7 +58,7 @@ hash.each do |cyto, data|
     puts "hco:#{cyto}##{ver}"
     puts "\trdf:type\thco:#{cyto} ;"
     puts "\thco:build\thco:#{ver} ;"
-    puts "\thco:bandcolor\t\"#{h[:col]}\" ;"
+    puts "\thco:bandtype\t#{cytoband_type[h[:col]]} ;"
     puts "\tfaldo:location\t["
     puts "\t\trdf:type\tfaldo:Region ;"
     puts "\t\tfaldo:begin\t["

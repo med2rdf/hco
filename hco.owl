@@ -11,28 +11,34 @@
 # Base classes and properties
 
 <http://identifiers.org/hco/>
-	rdf:type	owl:Ontology .
+	rdf:type	owl:Ontology ;
+	dct:license	<http://creativecommons.org/publicdomain/zero/1.0/> ;
+	rdfs:seeAlso	<https://github.com/med2rdf/hco/> ;
+	owl:versionInfo "2018-04-09"^^xsd:date .
 
 hco:HumanChromosome
+	rdf:type	owl:Class ;
 	rdfs:label	"Human chromosome" ;
 	skos:definition	"Collection of human chromosomes" ;
 	rdfs:seeAlso	<http://identifiers.org/taxonomy/9606> ;
-	rdfs:subClassOf	obo:SO_0000340 .    # chromosome
+	skos:broader	obo:SO_0000340 .    # chromosome
 
 hco:GenomeBuild
+	rdf:type	owl:Class ;
 	rdfs:label	"Genome build" ;
 	skos:definition	"Version of a genome assembly" ;
-	rdf:type	obo:SO_0001505 .    # reference_genome
+	skos:broader	obo:SO_0001505 .    # reference_genome
 
 hco:Cytoband
+	rdf:type	owl:Class ;
 	rdfs:label	"Cytoband" ;
 	skos:definition	"Chromosome band" ;
-	rdfs:subClassOf	obo:SO_0000341 .    # chromosome_band
+	skos:broader	obo:SO_0000341 .    # chromosome_band
 
 hco:CytobandType
+	rdf:type	owl:Class ;
 	rdfs:label	"Cytoband type" ;
-	skos:definition	"Cytoband types including Giemsa-banding annotations" ;
-	rdf:type	owl:Class .
+	skos:definition	"Cytoband types including Giemsa-banding annotations" .
 
 hco:build
 	rdfs:type	owl:ObjectProperty ;
@@ -40,9 +46,21 @@ hco:build
 	rdfs:domain	hco:HumanChromosome ;
 	rdfs:range	hco:GenomeBuild .
 
+hco:insdc
+	rdfs:type	owl:ObjectProperty ;
+	rdfs:label	"INSDC" ;
+	rdfs:domain	hco:HumanChromosome ;
+	rdfs:range	rdfs:Resource .
+
 hco:refseq
 	rdfs:type	owl:ObjectProperty ;
 	rdfs:label	"RefSeq" ;
+	rdfs:domain	hco:HumanChromosome ;
+	rdfs:range	rdfs:Resource .
+
+hco:ucsc
+	rdfs:type	owl:ObjectProperty ;
+	rdfs:label	"UCSC" ;
 	rdfs:domain	hco:HumanChromosome ;
 	rdfs:range	rdfs:Resource .
 
@@ -64,115 +82,653 @@ hco:bandtype
 	rdfs:domain	hco:Cytoband ;
 	rdfs:range	hco:CytobandType .
 
-# Human chromosome classes
+# Human chromosome classes and instances
 
 hco:1
 	rdfs:label	"Human chromosome 1" ;
 	rdfs:subClassOf	hco:HumanChromosome .
 
+hco:1#GRCh37
+	rdf:type	hco:1 ;
+	hco:build	hco:GRCh37 ;
+	hco:length	249250621 ;
+	skos:altLabel	"GPC_000000025" ;
+	hco:insdc	<http://identifiers.org/insdc/CM000663.1> ;
+	hco:refseq	<http://identifiers.org/refseq/NC_000001.10> ;
+	hco:ucsc	<http://genome.ucsc.edu/cgi-bin/hgTracks?db=hg19&position=chr1> ;
+	hco:ensembl	<http://rdf.ebi.ac.uk/resource/ensembl/homo_sapiens/GRCh37/1> ,
+			<http://grch37.ensembl.org/Homo_sapiens/Location/Chromosome?r=1> .
+
+hco:1#GRCh38
+	rdf:type	hco:1 ;
+	hco:build	hco:GRCh38 ;
+	hco:length	248956422 ;
+	skos:altLabel	"GPC_000001293" ;
+	hco:insdc	<http://identifiers.org/insdc/CM000663.2> ;
+	hco:refseq	<http://identifiers.org/refseq/NC_000001.11> ;
+	hco:ucsc	<http://genome.ucsc.edu/cgi-bin/hgTracks?db=hg38&position=chr1> ;
+	hco:ensembl	<http://rdf.ebi.ac.uk/resource/ensembl/homo_sapiens/GRCh38/1> ,
+			<http://www.ensembl.org/Homo_sapiens/Location/Chromosome?r=1> .
+
 hco:2
 	rdfs:label	"Human chromosome 2" ;
 	rdfs:subClassOf	hco:HumanChromosome .
+
+hco:2#GRCh37
+	rdf:type	hco:2 ;
+	hco:build	hco:GRCh37 ;
+	hco:length	243199373 ;
+	skos:altLabel	"GPC_000000026" ;
+	hco:insdc	<http://identifiers.org/insdc/CM000664.1> ;
+	hco:refseq	<http://identifiers.org/refseq/NC_000002.11> ;
+	hco:ucsc	<http://genome.ucsc.edu/cgi-bin/hgTracks?db=hg19&position=chr2> ;
+	hco:ensembl	<http://rdf.ebi.ac.uk/resource/ensembl/homo_sapiens/GRCh37/2> ,
+			<http://grch37.ensembl.org/Homo_sapiens/Location/Chromosome?r=2> .
+
+hco:2#GRCh38
+	rdf:type	hco:2 ;
+	hco:build	hco:GRCh38 ;
+	hco:length	242193529 ;
+	skos:altLabel	"GPC_000001294" ;
+	hco:insdc	<http://identifiers.org/insdc/CM000664.2> ;
+	hco:refseq	<http://identifiers.org/refseq/NC_000002.12> ;
+	hco:ucsc	<http://genome.ucsc.edu/cgi-bin/hgTracks?db=hg38&position=chr2> ;
+	hco:ensembl	<http://rdf.ebi.ac.uk/resource/ensembl/homo_sapiens/GRCh38/2> ,
+			<http://www.ensembl.org/Homo_sapiens/Location/Chromosome?r=2> .
 
 hco:3
 	rdfs:label	"Human chromosome 3" ;
 	rdfs:subClassOf	hco:HumanChromosome .
 
+hco:3#GRCh37
+	rdf:type	hco:3 ;
+	hco:build	hco:GRCh37 ;
+	hco:length	198022430 ;
+	skos:altLabel	"GPC_000000027" ;
+	hco:insdc	<http://identifiers.org/insdc/CM000665.1> ;
+	hco:refseq	<http://identifiers.org/refseq/NC_000003.11> ;
+	hco:ucsc	<http://genome.ucsc.edu/cgi-bin/hgTracks?db=hg19&position=chr3> ;
+	hco:ensembl	<http://rdf.ebi.ac.uk/resource/ensembl/homo_sapiens/GRCh37/3> ,
+			<http://grch37.ensembl.org/Homo_sapiens/Location/Chromosome?r=3> .
+
+hco:3#GRCh38
+	rdf:type	hco:3 ;
+	hco:build	hco:GRCh38 ;
+	hco:length	198295559 ;
+	skos:altLabel	"GPC_000001295" ;
+	hco:insdc	<http://identifiers.org/insdc/CM000665.2> ;
+	hco:refseq	<http://identifiers.org/refseq/NC_000003.12> ;
+	hco:ucsc	<http://genome.ucsc.edu/cgi-bin/hgTracks?db=hg38&position=chr3> ;
+	hco:ensembl	<http://rdf.ebi.ac.uk/resource/ensembl/homo_sapiens/GRCh38/3> ,
+			<http://www.ensembl.org/Homo_sapiens/Location/Chromosome?r=3> .
+
 hco:4
 	rdfs:label	"Human chromosome 4" ;
 	rdfs:subClassOf	hco:HumanChromosome .
+
+hco:4#GRCh37
+	rdf:type	hco:4 ;
+	hco:build	hco:GRCh37 ;
+	hco:length	191154276 ;
+	skos:altLabel	"GPC_000000028" ;
+	hco:insdc	<http://identifiers.org/insdc/CM000666.1> ;
+	hco:refseq	<http://identifiers.org/refseq/NC_000004.11> ;
+	hco:ucsc	<http://genome.ucsc.edu/cgi-bin/hgTracks?db=hg19&position=chr4> ;
+	hco:ensembl	<http://rdf.ebi.ac.uk/resource/ensembl/homo_sapiens/GRCh37/4> ,
+			<http://grch37.ensembl.org/Homo_sapiens/Location/Chromosome?r=4> .
+
+hco:4#GRCh38
+	rdf:type	hco:4 ;
+	hco:build	hco:GRCh38 ;
+	hco:length	190214555 ;
+	skos:altLabel	"GPC_000001296" ;
+	hco:insdc	<http://identifiers.org/insdc/CM000666.2> ;
+	hco:refseq	<http://identifiers.org/refseq/NC_000004.12> ;
+	hco:ucsc	<http://genome.ucsc.edu/cgi-bin/hgTracks?db=hg38&position=chr4> ;
+	hco:ensembl	<http://rdf.ebi.ac.uk/resource/ensembl/homo_sapiens/GRCh38/4> ,
+			<http://www.ensembl.org/Homo_sapiens/Location/Chromosome?r=4> .
 
 hco:5
 	rdfs:label	"Human chromosome 5" ;
 	rdfs:subClassOf	hco:HumanChromosome .
 
+hco:5#GRCh37
+	rdf:type	hco:5 ;
+	hco:build	hco:GRCh37 ;
+	hco:length	180915260 ;
+	skos:altLabel	"GPC_000000029" ;
+	hco:insdc	<http://identifiers.org/insdc/CM000667.1> ;
+	hco:refseq	<http://identifiers.org/refseq/NC_000005.9> ;
+	hco:ucsc	<http://genome.ucsc.edu/cgi-bin/hgTracks?db=hg19&position=chr5> ;
+	hco:ensembl	<http://rdf.ebi.ac.uk/resource/ensembl/homo_sapiens/GRCh37/5> ,
+			<http://grch37.ensembl.org/Homo_sapiens/Location/Chromosome?r=5> .
+
+hco:5#GRCh38
+	rdf:type	hco:5 ;
+	hco:build	hco:GRCh38 ;
+	hco:length	181538259 ;
+	skos:altLabel	"GPC_000001297" ;
+	hco:insdc	<http://identifiers.org/insdc/CM000667.2> ;
+	hco:refseq	<http://identifiers.org/refseq/NC_000005.10> ;
+	hco:ucsc	<http://genome.ucsc.edu/cgi-bin/hgTracks?db=hg38&position=chr5> ;
+	hco:ensembl	<http://rdf.ebi.ac.uk/resource/ensembl/homo_sapiens/GRCh38/5> ,
+			<http://www.ensembl.org/Homo_sapiens/Location/Chromosome?r=5> .
+
 hco:6
 	rdfs:label	"Human chromosome 6" ;
 	rdfs:subClassOf	hco:HumanChromosome .
+
+hco:6#GRCh37
+	rdf:type	hco:6 ;
+	hco:build	hco:GRCh37 ;
+	hco:length	171115067 ;
+	skos:altLabel	"GPC_000000030" ;
+	hco:insdc	<http://identifiers.org/insdc/CM000668.1> ;
+	hco:refseq	<http://identifiers.org/refseq/NC_000006.11> ;
+	hco:ucsc	<http://genome.ucsc.edu/cgi-bin/hgTracks?db=hg19&position=chr6> ;
+	hco:ensembl	<http://rdf.ebi.ac.uk/resource/ensembl/homo_sapiens/GRCh37/6> ,
+			<http://grch37.ensembl.org/Homo_sapiens/Location/Chromosome?r=6> .
+
+hco:6#GRCh38
+	rdf:type	hco:6 ;
+	hco:build	hco:GRCh38 ;
+	hco:length	170805979 ;
+	skos:altLabel	"GPC_000001298" ;
+	hco:insdc	<http://identifiers.org/insdc/CM000668.2> ;
+	hco:refseq	<http://identifiers.org/refseq/NC_000006.12> ;
+	hco:ucsc	<http://genome.ucsc.edu/cgi-bin/hgTracks?db=hg38&position=chr6> ;
+	hco:ensembl	<http://rdf.ebi.ac.uk/resource/ensembl/homo_sapiens/GRCh38/6> ,
+			<http://www.ensembl.org/Homo_sapiens/Location/Chromosome?r=6> .
 
 hco:7
 	rdfs:label	"Human chromosome 7" ;
 	rdfs:subClassOf	hco:HumanChromosome .
 
+hco:7#GRCh37
+	rdf:type	hco:7 ;
+	hco:build	hco:GRCh37 ;
+	hco:length	159138663 ;
+	skos:altLabel	"GPC_000000031" ;
+	hco:insdc	<http://identifiers.org/insdc/CM000669.1> ;
+	hco:refseq	<http://identifiers.org/refseq/NC_000007.13> ;
+	hco:ucsc	<http://genome.ucsc.edu/cgi-bin/hgTracks?db=hg19&position=chr7> ;
+	hco:ensembl	<http://rdf.ebi.ac.uk/resource/ensembl/homo_sapiens/GRCh37/7> ,
+			<http://grch37.ensembl.org/Homo_sapiens/Location/Chromosome?r=7> .
+
+hco:7#GRCh38
+	rdf:type	hco:7 ;
+	hco:build	hco:GRCh38 ;
+	hco:length	159345973 ;
+	skos:altLabel	"GPC_000001299" ;
+	hco:insdc	<http://identifiers.org/insdc/CM000669.2> ;
+	hco:refseq	<http://identifiers.org/refseq/NC_000007.14> ;
+	hco:ucsc	<http://genome.ucsc.edu/cgi-bin/hgTracks?db=hg38&position=chr7> ;
+	hco:ensembl	<http://rdf.ebi.ac.uk/resource/ensembl/homo_sapiens/GRCh38/7> ,
+			<http://www.ensembl.org/Homo_sapiens/Location/Chromosome?r=7> .
+
 hco:8
 	rdfs:label	"Human chromosome 8" ;
 	rdfs:subClassOf	hco:HumanChromosome .
+
+hco:8#GRCh37
+	rdf:type	hco:8 ;
+	hco:build	hco:GRCh37 ;
+	hco:length	146364022 ;
+	skos:altLabel	"GPC_000000032" ;
+	hco:insdc	<http://identifiers.org/insdc/CM000670.1> ;
+	hco:refseq	<http://identifiers.org/refseq/NC_000008.10> ;
+	hco:ucsc	<http://genome.ucsc.edu/cgi-bin/hgTracks?db=hg19&position=chr8> ;
+	hco:ensembl	<http://rdf.ebi.ac.uk/resource/ensembl/homo_sapiens/GRCh37/8> ,
+			<http://grch37.ensembl.org/Homo_sapiens/Location/Chromosome?r=8> .
+
+hco:8#GRCh38
+	rdf:type	hco:8 ;
+	hco:build	hco:GRCh38 ;
+	hco:length	145138636 ;
+	skos:altLabel	"GPC_000001300" ;
+	hco:insdc	<http://identifiers.org/insdc/CM000670.2> ;
+	hco:refseq	<http://identifiers.org/refseq/NC_000008.11> ;
+	hco:ucsc	<http://genome.ucsc.edu/cgi-bin/hgTracks?db=hg38&position=chr8> ;
+	hco:ensembl	<http://rdf.ebi.ac.uk/resource/ensembl/homo_sapiens/GRCh38/8> ,
+			<http://www.ensembl.org/Homo_sapiens/Location/Chromosome?r=8> .
 
 hco:9
 	rdfs:label	"Human chromosome 9" ;
 	rdfs:subClassOf	hco:HumanChromosome .
 
+hco:9#GRCh37
+	rdf:type	hco:9 ;
+	hco:build	hco:GRCh37 ;
+	hco:length	141213431 ;
+	skos:altLabel	"GPC_000000033" ;
+	hco:insdc	<http://identifiers.org/insdc/CM000671.1> ;
+	hco:refseq	<http://identifiers.org/refseq/NC_000009.11> ;
+	hco:ucsc	<http://genome.ucsc.edu/cgi-bin/hgTracks?db=hg19&position=chr9> ;
+	hco:ensembl	<http://rdf.ebi.ac.uk/resource/ensembl/homo_sapiens/GRCh37/9> ,
+			<http://grch37.ensembl.org/Homo_sapiens/Location/Chromosome?r=9> .
+
+hco:9#GRCh38
+	rdf:type	hco:9 ;
+	hco:build	hco:GRCh38 ;
+	hco:length	138394717 ;
+	skos:altLabel	"GPC_000001301" ;
+	hco:insdc	<http://identifiers.org/insdc/CM000671.2> ;
+	hco:refseq	<http://identifiers.org/refseq/NC_000009.12> ;
+	hco:ucsc	<http://genome.ucsc.edu/cgi-bin/hgTracks?db=hg38&position=chr9> ;
+	hco:ensembl	<http://rdf.ebi.ac.uk/resource/ensembl/homo_sapiens/GRCh38/9> ,
+			<http://www.ensembl.org/Homo_sapiens/Location/Chromosome?r=9> .
+
 hco:10
 	rdfs:label	"Human chromosome 10" ;
 	rdfs:subClassOf	hco:HumanChromosome .
+
+hco:10#GRCh37
+	rdf:type	hco:10 ;
+	hco:build	hco:GRCh37 ;
+	hco:length	135534747 ;
+	skos:altLabel	"GPC_000000034" ;
+	hco:insdc	<http://identifiers.org/insdc/CM000672.1> ;
+	hco:refseq	<http://identifiers.org/refseq/NC_000010.10> ;
+	hco:ucsc	<http://genome.ucsc.edu/cgi-bin/hgTracks?db=hg19&position=chr10> ;
+	hco:ensembl	<http://rdf.ebi.ac.uk/resource/ensembl/homo_sapiens/GRCh37/10> ,
+			<http://grch37.ensembl.org/Homo_sapiens/Location/Chromosome?r=10> .
+
+hco:10#GRCh38
+	rdf:type	hco:1 ;
+	hco:build	hco:GRCh38 ;
+	hco:length	133797422 ;
+	skos:altLabel	"GPC_000001302" ;
+	hco:insdc	<http://identifiers.org/insdc/CM000672.2> ;
+	hco:refseq	<http://identifiers.org/refseq/NC_000010.11> ;
+	hco:ucsc	<http://genome.ucsc.edu/cgi-bin/hgTracks?db=hg38&position=chr10> ;
+	hco:ensembl	<http://rdf.ebi.ac.uk/resource/ensembl/homo_sapiens/GRCh38/10> ,
+			<http://www.ensembl.org/Homo_sapiens/Location/Chromosome?r=10> .
 
 hco:11
 	rdfs:label	"Human chromosome 11" ;
 	rdfs:subClassOf	hco:HumanChromosome .
 
+hco:11#GRCh37
+	rdf:type	hco:11 ;
+	hco:build	hco:GRCh37 ;
+	hco:length	135006516 ;
+	skos:altLabel	"GPC_000000035" ;
+	hco:insdc	<http://identifiers.org/insdc/CM000673.1> ;
+	hco:refseq	<http://identifiers.org/refseq/NC_000011.9> ;
+	hco:ucsc	<http://genome.ucsc.edu/cgi-bin/hgTracks?db=hg19&position=chr11> ;
+	hco:ensembl	<http://rdf.ebi.ac.uk/resource/ensembl/homo_sapiens/GRCh37/11> ,
+			<http://grch37.ensembl.org/Homo_sapiens/Location/Chromosome?r=11> .
+
+hco:11#GRCh38
+	rdf:type	hco:11 ;
+	hco:build	hco:GRCh38 ;
+	hco:length	135086622 ;
+	skos:altLabel	"GPC_000001303" ;
+	hco:insdc	<http://identifiers.org/insdc/CM000673.2> ;
+	hco:refseq	<http://identifiers.org/refseq/NC_000011.10> ;
+	hco:ucsc	<http://genome.ucsc.edu/cgi-bin/hgTracks?db=hg38&position=chr11> ;
+	hco:ensembl	<http://rdf.ebi.ac.uk/resource/ensembl/homo_sapiens/GRCh38/11> ,
+			<http://www.ensembl.org/Homo_sapiens/Location/Chromosome?r=11> .
+
 hco:12
 	rdfs:label	"Human chromosome 12" ;
 	rdfs:subClassOf	hco:HumanChromosome .
+
+hco:12#GRCh37
+	rdf:type	hco:12 ;
+	hco:build	hco:GRCh37 ;
+	hco:length	133851895 ;
+	skos:altLabel	"GPC_000000036" ;
+	hco:insdc	<http://identifiers.org/insdc/CM000674.1> ;
+	hco:refseq	<http://identifiers.org/refseq/NC_000012.11> ;
+	hco:ucsc	<http://genome.ucsc.edu/cgi-bin/hgTracks?db=hg19&position=chr12> ;
+	hco:ensembl	<http://rdf.ebi.ac.uk/resource/ensembl/homo_sapiens/GRCh37/12> ,
+			<http://grch37.ensembl.org/Homo_sapiens/Location/Chromosome?r=12> .
+
+hco:12#GRCh38
+	rdf:type	hco:12 ;
+	hco:build	hco:GRCh38 ;
+	hco:length	133275309 ;
+	skos:altLabel	"GPC_000001304" ;
+	hco:insdc	<http://identifiers.org/insdc/CM000674.2> ;
+	hco:refseq	<http://identifiers.org/refseq/NC_000012.12> ;
+	hco:ucsc	<http://genome.ucsc.edu/cgi-bin/hgTracks?db=hg38&position=chr12> ;
+	hco:ensembl	<http://rdf.ebi.ac.uk/resource/ensembl/homo_sapiens/GRCh38/12> ,
+			<http://www.ensembl.org/Homo_sapiens/Location/Chromosome?r=12> .
 
 hco:13
 	rdfs:label	"Human chromosome 13" ;
 	rdfs:subClassOf	hco:HumanChromosome .
 
+hco:13#GRCh37
+	rdf:type	hco:13 ;
+	hco:build	hco:GRCh37 ;
+	hco:length	115169878 ;
+	skos:altLabel	"GPC_000000037" ;
+	hco:insdc	<http://identifiers.org/insdc/CM000675.1> ;
+	hco:refseq	<http://identifiers.org/refseq/NC_000013.10> ;
+	hco:ucsc	<http://genome.ucsc.edu/cgi-bin/hgTracks?db=hg19&position=chr13> ;
+	hco:ensembl	<http://rdf.ebi.ac.uk/resource/ensembl/homo_sapiens/GRCh37/13> ,
+			<http://grch37.ensembl.org/Homo_sapiens/Location/Chromosome?r=13> .
+
+hco:13#GRCh38
+	rdf:type	hco:13 ;
+	hco:build	hco:GRCh38 ;
+	hco:length	114364328 ;
+	skos:altLabel	"GPC_000001305" ;
+	hco:insdc	<http://identifiers.org/insdc/CM000675.2> ;
+	hco:refseq	<http://identifiers.org/refseq/NC_000013.11> ;
+	hco:ucsc	<http://genome.ucsc.edu/cgi-bin/hgTracks?db=hg38&position=chr13> ;
+	hco:ensembl	<http://rdf.ebi.ac.uk/resource/ensembl/homo_sapiens/GRCh38/13> ,
+			<http://www.ensembl.org/Homo_sapiens/Location/Chromosome?r=13> .
+
 hco:14
 	rdfs:label	"Human chromosome 14" ;
 	rdfs:subClassOf	hco:HumanChromosome .
+
+hco:14#GRCh37
+	rdf:type	hco:14 ;
+	hco:build	hco:GRCh37 ;
+	hco:length	107349540 ;
+	skos:altLabel	"GPC_000000038" ;
+	hco:insdc	<http://identifiers.org/insdc/CM000676.1> ;
+	hco:refseq	<http://identifiers.org/refseq/NC_000014.8> ;
+	hco:ucsc	<http://genome.ucsc.edu/cgi-bin/hgTracks?db=hg19&position=chr14> ;
+	hco:ensembl	<http://rdf.ebi.ac.uk/resource/ensembl/homo_sapiens/GRCh37/14> ,
+			<http://grch37.ensembl.org/Homo_sapiens/Location/Chromosome?r=14> .
+
+hco:14#GRCh38
+	rdf:type	hco:14 ;
+	hco:build	hco:GRCh38 ;
+	hco:length	107043718 ;
+	skos:altLabel	"GPC_000001306" ;
+	hco:insdc	<http://identifiers.org/insdc/CM000676.2> ;
+	hco:refseq	<http://identifiers.org/refseq/NC_000014.9> ;
+	hco:ucsc	<http://genome.ucsc.edu/cgi-bin/hgTracks?db=hg38&position=chr14> ;
+	hco:ensembl	<http://rdf.ebi.ac.uk/resource/ensembl/homo_sapiens/GRCh38/14> ,
+			<http://www.ensembl.org/Homo_sapiens/Location/Chromosome?r=14> .
 
 hco:15
 	rdfs:label	"Human chromosome 15" ;
 	rdfs:subClassOf	hco:HumanChromosome .
 
+hco:15#GRCh37
+	rdf:type	hco:15 ;
+	hco:build	hco:GRCh37 ;
+	hco:length	102531392 ;
+	skos:altLabel	"GPC_000000039" ;
+	hco:insdc	<http://identifiers.org/insdc/CM000677.1> ;
+	hco:refseq	<http://identifiers.org/refseq/NC_000015.9> ;
+	hco:ucsc	<http://genome.ucsc.edu/cgi-bin/hgTracks?db=hg19&position=chr15> ;
+	hco:ensembl	<http://rdf.ebi.ac.uk/resource/ensembl/homo_sapiens/GRCh37/15> ,
+			<http://grch37.ensembl.org/Homo_sapiens/Location/Chromosome?r=15> .
+
+hco:15#GRCh38
+	rdf:type	hco:15 ;
+	hco:build	hco:GRCh38 ;
+	hco:length	101991189 ;
+	skos:altLabel	"GPC_000001307" ;
+	hco:insdc	<http://identifiers.org/insdc/CM000677.2> ;
+	hco:refseq	<http://identifiers.org/refseq/NC_000015.10> ;
+	hco:ucsc	<http://genome.ucsc.edu/cgi-bin/hgTracks?db=hg38&position=chr15> ;
+	hco:ensembl	<http://rdf.ebi.ac.uk/resource/ensembl/homo_sapiens/GRCh38/15> ,
+			<http://www.ensembl.org/Homo_sapiens/Location/Chromosome?r=15> .
+
 hco:16
 	rdfs:label	"Human chromosome 16" ;
 	rdfs:subClassOf	hco:HumanChromosome .
+
+hco:16#GRCh37
+	rdf:type	hco:16 ;
+	hco:build	hco:GRCh37 ;
+	hco:length	90354753 ;
+	skos:altLabel	"GPC_000000040" ;
+	hco:insdc	<http://identifiers.org/insdc/CM000678.1> ;
+	hco:refseq	<http://identifiers.org/refseq/NC_000016.9> ;
+	hco:ucsc	<http://genome.ucsc.edu/cgi-bin/hgTracks?db=hg19&position=chr16> ;
+	hco:ensembl	<http://rdf.ebi.ac.uk/resource/ensembl/homo_sapiens/GRCh37/16> ,
+			<http://grch37.ensembl.org/Homo_sapiens/Location/Chromosome?r=16> .
+
+hco:16#GRCh38
+	rdf:type	hco:16 ;
+	hco:build	hco:GRCh38 ;
+	hco:length	90338345 ;
+	skos:altLabel	"GPC_000001308" ;
+	hco:insdc	<http://identifiers.org/insdc/CM000678.2> ;
+	hco:refseq	<http://identifiers.org/refseq/NC_000016.10> ;
+	hco:ucsc	<http://genome.ucsc.edu/cgi-bin/hgTracks?db=hg38&position=chr16> ;
+	hco:ensembl	<http://rdf.ebi.ac.uk/resource/ensembl/homo_sapiens/GRCh38/16> ,
+			<http://www.ensembl.org/Homo_sapiens/Location/Chromosome?r=16> .
 
 hco:17
 	rdfs:label	"Human chromosome 17" ;
 	rdfs:subClassOf	hco:HumanChromosome .
 
+hco:17#GRCh37
+	rdf:type	hco:17 ;
+	hco:build	hco:GRCh37 ;
+	hco:length	81195210 ;
+	skos:altLabel	"GPC_000000041" ;
+	hco:insdc	<http://identifiers.org/insdc/CM000679.1> ;
+	hco:refseq	<http://identifiers.org/refseq/NC_000017.10> ;
+	hco:ucsc	<http://genome.ucsc.edu/cgi-bin/hgTracks?db=hg19&position=chr17> ;
+	hco:ensembl	<http://rdf.ebi.ac.uk/resource/ensembl/homo_sapiens/GRCh37/17> ,
+			<http://grch37.ensembl.org/Homo_sapiens/Location/Chromosome?r=17> .
+
+hco:17#GRCh38
+	rdf:type	hco:17 ;
+	hco:build	hco:GRCh38 ;
+	hco:length	83257441 ;
+	skos:altLabel	"GPC_000001309" ;
+	hco:insdc	<http://identifiers.org/insdc/CM000679.2> ;
+	hco:refseq	<http://identifiers.org/refseq/NC_000017.11> ;
+	hco:ucsc	<http://genome.ucsc.edu/cgi-bin/hgTracks?db=hg38&position=chr17> ;
+	hco:ensembl	<http://rdf.ebi.ac.uk/resource/ensembl/homo_sapiens/GRCh38/17> ,
+			<http://www.ensembl.org/Homo_sapiens/Location/Chromosome?r=17> .
+
 hco:18
 	rdfs:label	"Human chromosome 18" ;
 	rdfs:subClassOf	hco:HumanChromosome .
+
+hco:18#GRCh37
+	rdf:type	hco:18 ;
+	hco:build	hco:GRCh37 ;
+	hco:length	78077248 ;
+	skos:altLabel	"GPC_000000042" ;
+	hco:insdc	<http://identifiers.org/insdc/CM000680.1> ;
+	hco:refseq	<http://identifiers.org/refseq/NC_000018.9> ;
+	hco:ucsc	<http://genome.ucsc.edu/cgi-bin/hgTracks?db=hg19&position=chr18> ;
+	hco:ensembl	<http://rdf.ebi.ac.uk/resource/ensembl/homo_sapiens/GRCh37/18> ,
+			<http://grch37.ensembl.org/Homo_sapiens/Location/Chromosome?r=18> .
+
+hco:18#GRCh38
+	rdf:type	hco:18 ;
+	hco:build	hco:GRCh38 ;
+	hco:length	80373285 ;
+	skos:altLabel	"GPC_000001310" ;
+	hco:insdc	<http://identifiers.org/insdc/CM000680.2> ;
+	hco:refseq	<http://identifiers.org/refseq/NC_000018.10> ;
+	hco:ucsc	<http://genome.ucsc.edu/cgi-bin/hgTracks?db=hg38&position=chr18> ;
+	hco:ensembl	<http://rdf.ebi.ac.uk/resource/ensembl/homo_sapiens/GRCh38/18> ,
+			<http://www.ensembl.org/Homo_sapiens/Location/Chromosome?r=18> .
 
 hco:19
 	rdfs:label	"Human chromosome 19" ;
 	rdfs:subClassOf	hco:HumanChromosome .
 
+hco:19#GRCh37
+	rdf:type	hco:19 ;
+	hco:build	hco:GRCh37 ;
+	hco:length	59128983 ;
+	skos:altLabel	"GPC_000000043" ;
+	hco:insdc	<http://identifiers.org/insdc/CM000681.1> ;
+	hco:refseq	<http://identifiers.org/refseq/NC_000019.9> ;
+	hco:ucsc	<http://genome.ucsc.edu/cgi-bin/hgTracks?db=hg19&position=chr19> ;
+	hco:ensembl	<http://rdf.ebi.ac.uk/resource/ensembl/homo_sapiens/GRCh37/19> ,
+			<http://grch37.ensembl.org/Homo_sapiens/Location/Chromosome?r=19> .
+
+hco:19#GRCh38
+	rdf:type	hco:19 ;
+	hco:build	hco:GRCh38 ;
+	hco:length	58617616 ;
+	skos:altLabel	"GPC_000001311" ;
+	hco:insdc	<http://identifiers.org/insdc/CM000681.2> ;
+	hco:refseq	<http://identifiers.org/refseq/NC_000019.10> ;
+	hco:ucsc	<http://genome.ucsc.edu/cgi-bin/hgTracks?db=hg19&position=chg38> ;
+	hco:ensembl	<http://rdf.ebi.ac.uk/resource/ensembl/homo_sapiens/GRCh38/19> ,
+			<http://www.ensembl.org/Homo_sapiens/Location/Chromosome?r=19> .
+
 hco:20
 	rdfs:label	"Human chromosome 20" ;
 	rdfs:subClassOf	hco:HumanChromosome .
+
+hco:20#GRCh37
+	rdf:type	hco:20 ;
+	hco:build	hco:GRCh37 ;
+	hco:length	63025520 ;
+	skos:altLabel	"GPC_000000044" ;
+	hco:insdc	<http://identifiers.org/insdc/CM000682.1> ;
+	hco:refseq	<http://identifiers.org/refseq/NC_000020.10> ;
+	hco:ucsc	<http://genome.ucsc.edu/cgi-bin/hgTracks?db=hg19&position=chr20> ;
+	hco:ensembl	<http://rdf.ebi.ac.uk/resource/ensembl/homo_sapiens/GRCh37/20> ,
+			<http://grch37.ensembl.org/Homo_sapiens/Location/Chromosome?r=20> .
+
+hco:20#GRCh38
+	rdf:type	hco:20 ;
+	hco:build	hco:GRCh38 ;
+	hco:length	64444167 ;
+	skos:altLabel	"GPC_000001312" ;
+	hco:insdc	<http://identifiers.org/insdc/CM000682.2> ;
+	hco:refseq	<http://identifiers.org/refseq/NC_000020.11> ;
+	hco:ucsc	<http://genome.ucsc.edu/cgi-bin/hgTracks?db=hg38&position=chr20> ;
+	hco:ensembl	<http://rdf.ebi.ac.uk/resource/ensembl/homo_sapiens/GRCh38/20> ,
+			<http://www.ensembl.org/Homo_sapiens/Location/Chromosome?r=20> .
 
 hco:21
 	rdfs:label	"Human chromosome 21" ;
 	rdfs:subClassOf	hco:HumanChromosome .
 
+hco:21#GRCh37
+	rdf:type	hco:21 ;
+	hco:build	hco:GRCh37 ;
+	hco:length	48129895 ;
+	skos:altLabel	"GPC_000000045" ;
+	hco:insdc	<http://identifiers.org/insdc/CM000683.1> ;
+	hco:refseq	<http://identifiers.org/refseq/NC_000021.8> ;
+	hco:ucsc	<http://genome.ucsc.edu/cgi-bin/hgTracks?db=hg19&position=chr21> ;
+	hco:ensembl	<http://rdf.ebi.ac.uk/resource/ensembl/homo_sapiens/GRCh37/21> ,
+			<http://grch37.ensembl.org/Homo_sapiens/Location/Chromosome?r=21> .
+
+hco:21#GRCh38
+	rdf:type	hco:21 ;
+	hco:build	hco:GRCh38 ;
+	hco:length	46709983 ;
+	skos:altLabel	"GPC_000001313" ;
+	hco:insdc	<http://identifiers.org/insdc/CM000683.2> ;
+	hco:refseq	<http://identifiers.org/refseq/NC_000021.9> ;
+	hco:ucsc	<http://genome.ucsc.edu/cgi-bin/hgTracks?db=hg38&position=chr21> ;
+	hco:ensembl	<http://rdf.ebi.ac.uk/resource/ensembl/homo_sapiens/GRCh38/21> ,
+			<http://www.ensembl.org/Homo_sapiens/Location/Chromosome?r=21> .
+
 hco:22
 	rdfs:label	"Human chromosome 22" ;
 	rdfs:subClassOf	hco:HumanChromosome .
+
+hco:22#GRCh37
+	rdf:type	hco:22 ;
+	hco:build	hco:GRCh37 ;
+	hco:length	51304566 ;
+	skos:altLabel	"GPC_000000046" ;
+	hco:insdc	<http://identifiers.org/insdc/CM000684.1> ;
+	hco:refseq	<http://identifiers.org/refseq/NC_000022.10> ;
+	hco:ucsc	<http://genome.ucsc.edu/cgi-bin/hgTracks?db=hg19&position=chr22> ;
+	hco:ensembl	<http://rdf.ebi.ac.uk/resource/ensembl/homo_sapiens/GRCh37/22> ,
+			<http://grch37.ensembl.org/Homo_sapiens/Location/Chromosome?r=22> .
+
+hco:22#GRCh38
+	rdf:type	hco:22 ;
+	hco:build	hco:GRCh38 ;
+	hco:length	50818468 ;
+	skos:altLabel	"GPC_000001314" ;
+	hco:insdc	<http://identifiers.org/insdc/CM000684.2> ;
+	hco:refseq	<http://identifiers.org/refseq/NC_000022.11> ;
+	hco:ucsc	<http://genome.ucsc.edu/cgi-bin/hgTracks?db=hg38&position=chr22> ;
+	hco:ensembl	<http://rdf.ebi.ac.uk/resource/ensembl/homo_sapiens/GRCh38/22> ,
+			<http://www.ensembl.org/Homo_sapiens/Location/Chromosome?r=22> .
 
 hco:X
 	rdfs:label	"Human chromosome X" ;
 	rdfs:subClassOf	hco:HumanChromosome .
 
+hco:X#GRCh37
+	rdf:type	hco:X ;
+	hco:build	hco:GRCh37 ;
+	hco:length	155270560 ;
+	skos:altLabel	"GPC_000000047" ;
+	hco:insdc	<http://identifiers.org/insdc/CM000685.1> ;
+	hco:refseq	<http://identifiers.org/refseq/NC_000023.10> ;
+	hco:ucsc	<http://genome.ucsc.edu/cgi-bin/hgTracks?db=hg19&position=chrX> ;
+	hco:ensembl	<http://rdf.ebi.ac.uk/resource/ensembl/homo_sapiens/GRCh37/X> ,
+			<http://grch37.ensembl.org/Homo_sapiens/Location/Chromosome?r=X> .
+
+hco:X#GRCh38
+	rdf:type	hco:X ;
+	hco:build	hco:GRCh38 ;
+	hco:length	156040895 ;
+	skos:altLabel	"GPC_000001315" ;
+	hco:insdc	<http://identifiers.org/insdc/CM000685.2> ;
+	hco:refseq	<http://identifiers.org/refseq/NC_000023.11> ;
+	hco:ucsc	<http://genome.ucsc.edu/cgi-bin/hgTracks?db=hg38&position=chrX> ;
+	hco:ensembl	<http://rdf.ebi.ac.uk/resource/ensembl/homo_sapiens/GRCh38/X> ,
+			<http://www.ensembl.org/Homo_sapiens/Location/Chromosome?r=X> .
+
 hco:Y
 	rdfs:label	"Human chromosome Y" ;
 	rdfs:subClassOf	hco:HumanChromosome .
+
+hco:Y#GRCh37
+	rdf:type	hco:Y ;
+	hco:build	hco:GRCh37 ;
+	hco:length	59373566 ;
+	skos:altLabel	"GPC_000000048" ;
+	hco:insdc	<http://identifiers.org/insdc/CM000686.1> ;
+	hco:refseq	<http://identifiers.org/refseq/NC_000024.9> ;
+	hco:ucsc	<http://genome.ucsc.edu/cgi-bin/hgTracks?db=hg19&position=chrY> ;
+	hco:ensembl	<http://rdf.ebi.ac.uk/resource/ensembl/homo_sapiens/GRCh37/Y> ,
+			<http://grch37.ensembl.org/Homo_sapiens/Location/Chromosome?r=Y> .
+
+hco:Y#GRCh38
+	rdf:type	hco:Y ;
+	hco:build	hco:GRCh38 ;
+	hco:length	57227415 ;
+	skos:altLabel	"GPC_000001316" ;
+	hco:insdc	<http://identifiers.org/insdc/CM000686.2> ;
+	hco:refseq	<http://identifiers.org/refseq/NC_000024.10> ;
+	hco:ucsc	<http://genome.ucsc.edu/cgi-bin/hgTracks?db=hg38&position=chrY> ;
+	hco:ensembl	<http://rdf.ebi.ac.uk/resource/ensembl/homo_sapiens/GRCh38/Y> ,
+			<http://www.ensembl.org/Homo_sapiens/Location/Chromosome?r=Y> .
 
 hco:MT
 	rdfs:label	"Human mitochondrion genome" ;
 	rdfs:subClassOf	hco:HumanChromosome .
 
-# Human genome build classes
+hco:MT#GRCh37
+	rdf:type	hco:MT ;
+	hco:length	16569 ;
+	skos:altLabel	"AC_000021" ;
+	hco:insdc	<http://identifiers.org/insdc/J01415.2> ;
+	hco:refseq	<http://identifiers.org/refseq/NC_012920.1> ;
+	hco:ensembl	<http://rdf.ebi.ac.uk/resource/ensembl/homo_sapiens/GRCh37/MT> .
 
-hco:GRCh38
-	rdfs:label	"GRCh38" ;
-	skos:definition	"Genome Reference Consortium Human Build 38" ;
-	skos:altLabel	"hg38" ;
-	rdfs:subClassOf	hco:GenomeBuild .
+hco:MT#GRCh38
+	rdf:type	hco:MT ;
+	hco:length	16569 ;
+	skos:altLabel	"AC_000021" ;
+	hco:insdc	<http://identifiers.org/insdc/J01415.2> ;
+	hco:refseq	<http://identifiers.org/refseq/NC_012920.1> ;
+	hco:ensembl	<http://rdf.ebi.ac.uk/resource/ensembl/homo_sapiens/GRCh38/MT> .
+
+# Human genome build classes and instances
 
 hco:GRCh37
 	rdfs:label	"GRCh37" ;
@@ -180,394 +736,71 @@ hco:GRCh37
 	skos:altLabel	"hg19" ;
 	rdfs:subClassOf	hco:GenomeBuild .
 
-# Human chromosome instances
-
-hco:1#GRCh38
-	rdf:type	hco:1 ;
-	hco:build	hco:GRCh38 ;
-	hco:length	248956422 ;
-	skos:altLabel	"GPC_000001293" ;
-	hco:refseq	<http://identifiers.org/refseq/NC_000001.11> .
-
-hco:2#GRCh38
-	rdf:type	hco:2 ;
-	hco:build	hco:GRCh38 ;
-	hco:length	242193529 ;
-	skos:altLabel	"GPC_000001294" ;
-	hco:refseq	<http://identifiers.org/refseq/NC_000002.12> .
-
-hco:3#GRCh38
-	rdf:type	hco:3 ;
-	hco:build	hco:GRCh38 ;
-	hco:length	198295559 ;
-	skos:altLabel	"GPC_000001295" ;
-	hco:refseq	<http://identifiers.org/refseq/NC_000003.12> .
-
-hco:4#GRCh38
-	rdf:type	hco:4 ;
-	hco:build	hco:GRCh38 ;
-	hco:length	190214555 ;
-	skos:altLabel	"GPC_000001296" ;
-	hco:refseq	<http://identifiers.org/refseq/NC_000004.12> .
-
-hco:5#GRCh38
-	rdf:type	hco:5 ;
-	hco:build	hco:GRCh38 ;
-	hco:length	181538259 ;
-	skos:altLabel	"GPC_000001297" ;
-	hco:refseq	<http://identifiers.org/refseq/NC_000005.10> .
-
-hco:6#GRCh38
-	rdf:type	hco:6 ;
-	hco:build	hco:GRCh38 ;
-	hco:length	170805979 ;
-	skos:altLabel	"GPC_000001298" ;
-	hco:refseq	<http://identifiers.org/refseq/NC_000006.12> .
-
-hco:7#GRCh38
-	rdf:type	hco:7 ;
-	hco:build	hco:GRCh38 ;
-	hco:length	159345973 ;
-	skos:altLabel	"GPC_000001299" ;
-	hco:refseq	<http://identifiers.org/refseq/NC_000007.14> .
-
-hco:8#GRCh38
-	rdf:type	hco:8 ;
-	hco:build	hco:GRCh38 ;
-	hco:length	145138636 ;
-	skos:altLabel	"GPC_000001300" ;
-	hco:refseq	<http://identifiers.org/refseq/NC_000008.11> .
-
-hco:9#GRCh38
-	rdf:type	hco:9 ;
-	hco:build	hco:GRCh38 ;
-	hco:length	138394717 ;
-	skos:altLabel	"GPC_000001301" ;
-	hco:refseq	<http://identifiers.org/refseq/NC_000009.12> .
-
-hco:10#GRCh38
-	rdf:type	hco:1 ;
-	hco:build	hco:GRCh38 ;
-	hco:length	133797422 ;
-	skos:altLabel	"GPC_000001302" ;
-	hco:refseq	<http://identifiers.org/refseq/NC_000010.11> .
-
-hco:11#GRCh38
-	rdf:type	hco:11 ;
-	hco:build	hco:GRCh38 ;
-	hco:length	135086622 ;
-	skos:altLabel	"GPC_000001303" ;
-	hco:refseq	<http://identifiers.org/refseq/NC_000011.10> .
-
-hco:12#GRCh38
-	rdf:type	hco:12 ;
-	hco:build	hco:GRCh38 ;
-	hco:length	133275309 ;
-	skos:altLabel	"GPC_000001304" ;
-	hco:refseq	<http://identifiers.org/refseq/NC_000012.12> .
-
-hco:13#GRCh38
-	rdf:type	hco:13 ;
-	hco:build	hco:GRCh38 ;
-	hco:length	114364328 ;
-	skos:altLabel	"GPC_000001305" ;
-	hco:refseq	<http://identifiers.org/refseq/NC_000013.11> .
-
-hco:14#GRCh38
-	rdf:type	hco:14 ;
-	hco:build	hco:GRCh38 ;
-	hco:length	107043718 ;
-	skos:altLabel	"GPC_000001306" ;
-	hco:refseq	<http://identifiers.org/refseq/NC_000014.9> .
-
-hco:15#GRCh38
-	rdf:type	hco:15 ;
-	hco:build	hco:GRCh38 ;
-	hco:length	101991189 ;
-	skos:altLabel	"GPC_000001307" ;
-	hco:refseq	<http://identifiers.org/refseq/NC_000015.10> .
-
-hco:16#GRCh38
-	rdf:type	hco:16 ;
-	hco:build	hco:GRCh38 ;
-	hco:length	90338345 ;
-	skos:altLabel	"GPC_000001308" ;
-	hco:refseq	<http://identifiers.org/refseq/NC_000016.10> .
-
-hco:17#GRCh38
-	rdf:type	hco:17 ;
-	hco:build	hco:GRCh38 ;
-	hco:length	83257441 ;
-	skos:altLabel	"GPC_000001309" ;
-	hco:refseq	<http://identifiers.org/refseq/NC_000017.11> .
-
-hco:18#GRCh38
-	rdf:type	hco:18 ;
-	hco:build	hco:GRCh38 ;
-	hco:length	80373285 ;
-	skos:altLabel	"GPC_000001310" ;
-	hco:refseq	<http://identifiers.org/refseq/NC_000018.10> .
-
-hco:19#GRCh38
-	rdf:type	hco:19 ;
-	hco:build	hco:GRCh38 ;
-	hco:length	58617616 ;
-	skos:altLabel	"GPC_000001311" ;
-	hco:refseq	<http://identifiers.org/refseq/NC_000019.10> .
-
-hco:20#GRCh38
-	rdf:type	hco:20 ;
-	hco:build	hco:GRCh38 ;
-	hco:length	64444167 ;
-	skos:altLabel	"GPC_000001312" ;
-	hco:refseq	<http://identifiers.org/refseq/NC_000020.11> .
-
-hco:21#GRCh38
-	rdf:type	hco:21 ;
-	hco:build	hco:GRCh38 ;
-	hco:length	46709983 ;
-	skos:altLabel	"GPC_000001313" ;
-	hco:refseq	<http://identifiers.org/refseq/NC_000021.9> .
-
-hco:22#GRCh38
-	rdf:type	hco:22 ;
-	hco:build	hco:GRCh38 ;
-	hco:length	50818468 ;
-	skos:altLabel	"GPC_000001314" ;
-	hco:refseq	<http://identifiers.org/refseq/NC_000022.11> .
-
-hco:X#GRCh38
-	rdf:type	hco:X ;
-	hco:build	hco:GRCh38 ;
-	hco:length	156040895 ;
-	skos:altLabel	"GPC_000001315" ;
-	hco:refseq	<http://identifiers.org/refseq/NC_000023.11> .
-
-hco:Y#GRCh38
-	rdf:type	hco:Y ;
-	hco:build	hco:GRCh38 ;
-	hco:length	57227415 ;
-	skos:altLabel	"GPC_000001316" ;
-	hco:refseq	<http://identifiers.org/refseq/NC_000024.10> .
-
-hco:MT#GRCh38
-	rdf:type	hco:MT ;
-	hco:length	16569 ;
-	skos:altLabel	"AC_000021" ;
-	hco:refseq	<http://identifiers.org/refseq/NC_012920.1> .
-
-hco:1#GRCh37
-	rdf:type	hco:1 ;
-	hco:build	hco:GRCh37 ;
-	hco:length	249250621 ;
-	skos:altLabel	"GPC_000000025" ;
-	hco:refseq	<http://identifiers.org/refseq/NC_000001.10> .
-
-hco:2#GRCh37
-	rdf:type	hco:2 ;
-	hco:build	hco:GRCh37 ;
-	hco:length	243199373 ;
-	skos:altLabel	"GPC_000000026" ;
-	hco:refseq	<http://identifiers.org/refseq/NC_000002.11> .
-
-hco:3#GRCh37
-	rdf:type	hco:3 ;
-	hco:build	hco:GRCh37 ;
-	hco:length	198022430 ;
-	skos:altLabel	"GPC_000000027" ;
-	hco:refseq	<http://identifiers.org/refseq/NC_000003.11> .
-
-hco:4#GRCh37
-	rdf:type	hco:4 ;
-	hco:build	hco:GRCh37 ;
-	hco:length	191154276 ;
-	skos:altLabel	"GPC_000000028" ;
-	hco:refseq	<http://identifiers.org/refseq/NC_000004.11> .
-
-hco:5#GRCh37
-	rdf:type	hco:5 ;
-	hco:build	hco:GRCh37 ;
-	hco:length	180915260 ;
-	skos:altLabel	"GPC_000000029" ;
-	hco:refseq	<http://identifiers.org/refseq/NC_000005.9> .
-
-hco:6#GRCh37
-	rdf:type	hco:6 ;
-	hco:build	hco:GRCh37 ;
-	hco:length	171115067 ;
-	skos:altLabel	"GPC_000000030" ;
-	hco:refseq	<http://identifiers.org/refseq/NC_000006.11> .
-
-hco:7#GRCh37
-	rdf:type	hco:7 ;
-	hco:build	hco:GRCh37 ;
-	hco:length	159138663 ;
-	skos:altLabel	"GPC_000000031" ;
-	hco:refseq	<http://identifiers.org/refseq/NC_000007.13> .
-
-hco:8#GRCh37
-	rdf:type	hco:8 ;
-	hco:build	hco:GRCh37 ;
-	hco:length	146364022 ;
-	skos:altLabel	"GPC_000000032" ;
-	hco:refseq	<http://identifiers.org/refseq/NC_000008.10> .
-
-hco:9#GRCh37
-	rdf:type	hco:9 ;
-	hco:build	hco:GRCh37 ;
-	hco:length	141213431 ;
-	skos:altLabel	"GPC_000000033" ;
-	hco:refseq	<http://identifiers.org/refseq/NC_000009.11> .
-
-hco:10#GRCh37
-	rdf:type	hco:10 ;
-	hco:build	hco:GRCh37 ;
-	hco:length	135534747 ;
-	skos:altLabel	"GPC_000000034" ;
-	hco:refseq	<http://identifiers.org/refseq/NC_000010.10> .
-
-hco:11#GRCh37
-	rdf:type	hco:11 ;
-	hco:build	hco:GRCh37 ;
-	hco:length	135006516 ;
-	skos:altLabel	"GPC_000000035" ;
-	hco:refseq	<http://identifiers.org/refseq/NC_000011.9> .
-
-hco:12#GRCh37
-	rdf:type	hco:12 ;
-	hco:build	hco:GRCh37 ;
-	hco:length	133851895 ;
-	skos:altLabel	"GPC_000000036" ;
-	hco:refseq	<http://identifiers.org/refseq/NC_000012.11> .
-
-hco:13#GRCh37
-	rdf:type	hco:13 ;
-	hco:build	hco:GRCh37 ;
-	hco:length	115169878 ;
-	skos:altLabel	"GPC_000000037" ;
-	hco:refseq	<http://identifiers.org/refseq/NC_000013.10> .
-
-hco:14#GRCh37
-	rdf:type	hco:14 ;
-	hco:build	hco:GRCh37 ;
-	hco:length	107349540 ;
-	skos:altLabel	"GPC_000000038" ;
-	hco:refseq	<http://identifiers.org/refseq/NC_000014.8> .
-
-hco:15#GRCh37
-	rdf:type	hco:15 ;
-	hco:build	hco:GRCh37 ;
-	hco:length	102531392 ;
-	skos:altLabel	"GPC_000000039" ;
-	hco:refseq	<http://identifiers.org/refseq/NC_000015.9> .
-
-hco:16#GRCh37
-	rdf:type	hco:16 ;
-	hco:build	hco:GRCh37 ;
-	hco:length	 90354753 ;
-	skos:altLabel	 "GPC_000000040" ;
-	hco:refseq	<http://identifiers.org/refseq/NC_000016.9> .
-
-hco:17#GRCh37
-	rdf:type	hco:17 ;
-	hco:build	hco:GRCh37 ;
-	hco:length	 81195210 ;
-	skos:altLabel	 "GPC_000000041" ;
-	hco:refseq	<http://identifiers.org/refseq/NC_000017.10> .
-
-hco:18#GRCh37
-	rdf:type	hco:18 ;
-	hco:build	hco:GRCh37 ;
-	hco:length	 78077248 ;
-	skos:altLabel	 "GPC_000000042" ;
-	hco:refseq	<http://identifiers.org/refseq/NC_000018.9> .
-
-hco:19#GRCh37
-	rdf:type	hco:19 ;
-	hco:build	hco:GRCh37 ;
-	hco:length	 59128983 ;
-	skos:altLabel	 "GPC_000000043" ;
-	hco:refseq	<http://identifiers.org/refseq/NC_000019.9> .
-
-hco:20#GRCh37
-	rdf:type	hco:20 ;
-	hco:build	hco:GRCh37 ;
-	hco:length	 63025520 ;
-	skos:altLabel	 "GPC_000000044" ;
-	hco:refseq	<http://identifiers.org/refseq/NC_000020.10> .
-
-hco:21#GRCh37
-	rdf:type	hco:21 ;
-	hco:build	hco:GRCh37 ;
-	hco:length	 48129895 ;
-	skos:altLabel	 "GPC_000000045" ;
-	hco:refseq	<http://identifiers.org/refseq/NC_000021.8> .
-
-hco:22#GRCh37
-	rdf:type	hco:22 ;
-	hco:build	hco:GRCh37 ;
-	hco:length	 51304566 ;
-	skos:altLabel	 "GPC_000000046" ;
-	hco:refseq	<http://identifiers.org/refseq/NC_000022.10> .
-
-hco:X#GRCh37
-	rdf:type	hco:X ;
-	hco:build	hco:GRCh37 ;
-	hco:length	155270560 ;
-	skos:altLabel	"GPC_000000047" ;
-	hco:refseq	<http://identifiers.org/refseq/NC_000023.10> .
-
-hco:Y#GRCh37
-	rdf:type	hco:Y ;
-	hco:build	hco:GRCh37 ;
-	hco:length	 59373566 ;
-	skos:altLabel	 "GPC_000000048" ;
-	hco:refseq	<http://identifiers.org/refseq/NC_000024.9> .
-
-hco:MT#GRCh37
-	rdf:type	hco:MT ;
-	hco:length	16569 ;
-	skos:altLabel	"AC_000021" ;
-	hco:refseq	<http://identifiers.org/refseq/NC_012920.1> .
-
-# Human genome build instances
-
-hco:GRCh38.p11
-	rdfs:label	"GRCh38.p11" ;
-	skos:definition	"Genome Reference Consortium Human Build 38 patch release 11" ;
-	skos:altLabel	"hg38" ;
-	hco:length	3253848404 ;
-	dct:date	"2017-06-14"^^xsd:date ;
-	rdfs:seeAlso	<https://www.ncbi.nlm.nih.gov/assembly/GCF_000001405.37> ;
-	rdf:type	hco:GenomeBuild .
-
-hco:GRCh38.p10  # Current Ensembl version
-	rdfs:label	"GRCh38.p10" ;
-	skos:definition	"Genome Reference Consortium Human Build 38 patch release 10" ;
-	skos:altLabel	"hg38" ;
-	hco:length	3241953429 ;
-	dct:date	"2017-01-06"^^xsd:date ;
-	rdfs:seeAlso	<https://www.ncbi.nlm.nih.gov/assembly/GCF_000001405.36> ;
-	rdf:type	hco:GenomeBuild .
-
-hco:GRCh38.p7  # Current RefSeq version
-	rdfs:label	"GRCh38.p7" ;
-	skos:definition	"Genome Reference Consortium Human Build 38 patch release 7" ;
-	skos:altLabel	"hg38" ;
-	hco:length	3232546710 ;
-	dct:date	"2016-03-21"^^xsd:date ;
-	rdfs:seeAlso	<https://www.ncbi.nlm.nih.gov/assembly/GCF_000001405.33> ;
-	rdf:type	hco:GenomeBuild .
+hco:GRCh37.p0
+	rdfs:label	"GRCh37.p0" ;
+	skos:definition	"Genome Reference Consortium Human Build 37" ;
+	hco:length	3137144693;
+	dct:date	"2009-02-27"^^xsd:date ;
+	rdfs:seeAlso	<https://www.ncbi.nlm.nih.gov/assembly/GCA_000001405.1> ;
+	rdfs:seeAlso	<https://www.ncbi.nlm.nih.gov/assembly/GCF_000001405.13> ;
+	rdf:type	hco:GRCh37 .
 
 hco:GRCh37.p13
 	rdfs:label	"GRCh37.p13" ;
 	skos:definition	"Genome Reference Consortium Human Build 37 patch release 13" ;
 	hco:length	3234834689 ;
 	dct:date	"2013-06-28"^^xsd:date ;
+	rdfs:seeAlso	<https://www.ncbi.nlm.nih.gov/assembly/GCA_000001405.14> ;
 	rdfs:seeAlso	<https://www.ncbi.nlm.nih.gov/assembly/GCF_000001405.25> ;
 	rdf:type	hco:GRCh37 .
 
-# Cytoband types
+hco:GRCh38
+	rdfs:label	"GRCh38" ;
+	skos:definition	"Genome Reference Consortium Human Build 38" ;
+	skos:altLabel	"hg38" ;
+	rdfs:subClassOf	hco:GenomeBuild .
+
+hco:GRCh38.p0
+	rdfs:label	"GRCh38.p0" ;
+	skos:definition	"Genome Reference Consortium Human Build 38" ;
+	skos:altLabel	"hg38" ;
+	hco:length	3209286105 ;
+	dct:date	"2013-12-17"^^xsd:date ;
+	rdfs:seeAlso	<https://www.ncbi.nlm.nih.gov/assembly/GCA_000001405.15> ;
+	rdfs:seeAlso	<https://www.ncbi.nlm.nih.gov/assembly/GCF_000001405.26> ;
+	rdf:type	hco:GenomeBuild .
+
+hco:GRCh38.p7  # Previous RefSeq version
+	rdfs:label	"GRCh38.p7" ;
+	skos:definition	"Genome Reference Consortium Human Build 38 patch release 7" ;
+	skos:altLabel	"hg38" ;
+	hco:length	3232546710 ;
+	dct:date	"2016-03-21"^^xsd:date ;
+	rdfs:seeAlso	<https://www.ncbi.nlm.nih.gov/assembly/GCA_000001405.22> ;
+	rdfs:seeAlso	<https://www.ncbi.nlm.nih.gov/assembly/GCF_000001405.33> ;
+	rdf:type	hco:GenomeBuild .
+
+hco:GRCh38.p10  # Previous Ensembl version
+	rdfs:label	"GRCh38.p10" ;
+	skos:definition	"Genome Reference Consortium Human Build 38 patch release 10" ;
+	skos:altLabel	"hg38" ;
+	hco:length	3241953429 ;
+	dct:date	"2017-01-06"^^xsd:date ;
+	rdfs:seeAlso	<https://www.ncbi.nlm.nih.gov/assembly/GCA_000001405.25> ;
+	rdfs:seeAlso	<https://www.ncbi.nlm.nih.gov/assembly/GCF_000001405.36> ;
+	rdf:type	hco:GenomeBuild .
+
+hco:GRCh38.p12  # Current version
+	rdfs:label	"GRCh38.p12" ;
+	skos:definition	"Genome Reference Consortium Human Build 38 patch release 12" ;
+	skos:altLabel	"hg38" ;
+	hco:length	3257319537 ;
+	dct:date	"2017-12-21"^^xsd:date ;
+	rdfs:seeAlso	<https://www.ncbi.nlm.nih.gov/assembly/GCA_000001405.27> ;
+	rdfs:seeAlso	<https://www.ncbi.nlm.nih.gov/assembly/GCF_000001405.38> ;
+	rdf:type	hco:GenomeBuild .
+
+# Cytoband classes and instances
 
 hco:Acen
 	rdf:type	hco:CytobandType ;
@@ -608,8 +841,6 @@ hco:Stalk
 	rdf:type	hco:CytobandType ;
 	rdfs:label	"stalk" ;
 	skos:definition	"Short arm of the acrocentric chromosomes." .
-
-# Chromosome bands
 
 hco:1p36.33
 	rdfs:label	"1p36.33" ;

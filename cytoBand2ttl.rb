@@ -7,7 +7,9 @@
 
 hash = {}
 
-[ "GRCh37", "GRCh38" ].each do |ver|
+versions = [ "GRCh37", "GRCh38" ]
+
+versions.each do |ver|
   File.open("cytoBand-#{ver}.txt") do |file|
     file.each do |line|
       chr, from, to, band, col = line.strip.split
@@ -37,23 +39,28 @@ puts "
 
 hash.each do |cyto, data|
   puts "hco:#{cyto}"
-  puts "\trdf:type\thco:Cytoband ;"
   puts "\trdfs:label\t\"#{cyto}\" ;"
-  [ data["GRCh37"], data["GRCh38"] ].each do |h|
+  puts "\trdfs:subClassOf\thco:Cytoband ."
+  puts
+  versions.each do |ver|
+    h = data[ver]
+    puts "hco:#{cyto}##{ver}"
+    puts "\trdf:type\thco:#{cyto} ;"
+    puts "\thco:build\thco:#{ver} ;"
+    puts "\thco:bandcolor\t\"#{h[:col]}\" ;"
     puts "\tfaldo:location\t["
     puts "\t\trdf:type\tfaldo:Region ;"
     puts "\t\tfaldo:begin\t["
-    puts "\t\t\trdf:type\tfaldo:Position ;"
+    puts "\t\t\trdf:type\tfaldo:BothStrandsPosition ;"
     puts "\t\t\tfaldo:position\t#{h[:from]} ;"
     puts "\t\t\tfaldo:reference\t#{h[:ref]}"
     puts "\t\t] ;"
     puts "\t\tfaldo:end\t["
-    puts "\t\t\trdf:type\tfaldo:Position ;"
+    puts "\t\t\trdf:type\tfaldo:BothStrandsPosition ;"
     puts "\t\t\tfaldo:position\t#{h[:to]} ;"
     puts "\t\t\tfaldo:reference\t#{h[:ref]}"
     puts "\t\t]"
-    puts "\t] ;"
+    puts "\t] ."
+    puts
   end
-  puts "\thco:bandcolor\t\"#{data["GRCh38"][:col] || data["GRCh37"][:col]}\" ."
-  puts
 end

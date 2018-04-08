@@ -8,6 +8,8 @@
 @prefix faldo: <http://biohackathon.org/resource/faldo#> .
 @prefix hco:   <http://identifiers.org/hco/> .
 
+# Base classes and properties
+
 <http://identifiers.org/hco/>
 	rdf:type	owl:Ontology .
 
@@ -61,48 +63,6 @@ hco:bandtype
 	rdfs:label	"cytoband type" ;
 	rdfs:domain	hco:Cytoband ;
 	rdfs:range	hco:CytobandType .
-
-# Cytoband types
-
-hco:Acen
-	rdf:type	hco:CytobandType ;
-	rdfs:label	"acen" ;
-	skos:definition	"Centromeric region" .
-
-hco:Gneg
-	rdf:type	hco:CytobandType ;
-	rdfs:label	"gneg" ;
-	skos:definition	"Giemsa negative band" .
-
-hco:Gpos100
-	rdf:type	hco:CytobandType ;
-	rdfs:label	"gpos100" ;
-	skos:definition	"Giemsa positive band, the darkest stain level" .
-
-hco:Gpos25
-	rdf:type	hco:CytobandType ;
-	rdfs:label	"gpos25" ;
-	skos:definition	"Giemsa positive band, the lightest stain level" .
-
-hco:Gpos50
-	rdf:type	hco:CytobandType ;
-	rdfs:label	"gpos50" ;
-	skos:definition	"Giemsa positive band, the second lightest stain level" .
-
-hco:Gpos75
-	rdf:type	hco:CytobandType ;
-	rdfs:label	"gpos75" ;
-	skos:definition	"Giemsa positive band, the second darkest stain level" .
-
-hco:Gvar
-	rdf:type	hco:CytobandType ;
-	rdfs:label	"gvar" ;
-	rdfs:definition "Variable length heterochromatic region." .
-
-hco:Stalk
-	rdf:type	hco:CytobandType ;
-	rdfs:label	"stalk" ;
-	skos:definition	"Short arm of the acrocentric chromosomes." .
 
 # Human chromosome classes
 
@@ -606,6 +566,48 @@ hco:GRCh37.p13
 	dct:date	"2013-06-28"^^xsd:date ;
 	rdfs:seeAlso	<https://www.ncbi.nlm.nih.gov/assembly/GCF_000001405.25> ;
 	rdf:type	hco:GRCh37 .
+
+# Cytoband types
+
+hco:Acen
+	rdf:type	hco:CytobandType ;
+	rdfs:label	"acen" ;
+	skos:definition	"Centromeric region" .
+
+hco:Gneg
+	rdf:type	hco:CytobandType ;
+	rdfs:label	"gneg" ;
+	skos:definition	"Giemsa negative band" .
+
+hco:Gpos100
+	rdf:type	hco:CytobandType ;
+	rdfs:label	"gpos100" ;
+	skos:definition	"Giemsa positive band, the darkest stain level" .
+
+hco:Gpos25
+	rdf:type	hco:CytobandType ;
+	rdfs:label	"gpos25" ;
+	skos:definition	"Giemsa positive band, the lightest stain level" .
+
+hco:Gpos50
+	rdf:type	hco:CytobandType ;
+	rdfs:label	"gpos50" ;
+	skos:definition	"Giemsa positive band, the second lightest stain level" .
+
+hco:Gpos75
+	rdf:type	hco:CytobandType ;
+	rdfs:label	"gpos75" ;
+	skos:definition	"Giemsa positive band, the second darkest stain level" .
+
+hco:Gvar
+	rdf:type	hco:CytobandType ;
+	rdfs:label	"gvar" ;
+	rdfs:definition "Variable length heterochromatic region." .
+
+hco:Stalk
+	rdf:type	hco:CytobandType ;
+	rdfs:label	"stalk" ;
+	skos:definition	"Short arm of the acrocentric chromosomes." .
 
 # Chromosome bands
 

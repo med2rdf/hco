@@ -8,6 +8,9 @@
 @prefix faldo: <http://biohackathon.org/resource/faldo#> .
 @prefix hco:   <http://identifiers.org/hco/> .
 
+<http://identifiers.org/hco/>
+	rdf:type	owl:Ontology .
+
 hco:HumanChromosome
 	rdfs:label	"Human chromosome" ;
 	skos:definition	"Collection of human chromosomes" ;

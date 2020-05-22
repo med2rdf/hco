@@ -9,7 +9,7 @@ hco:21
         rdfs:label      "Human chromosome 21" ;
         rdfs:subClassOf hco:HumanChromosome .
 
-hco:21#GRCh38
+hco:21\#GRCh38
         rdf:type        hco:21 ;
         hco:build       hco:GRCh38 ;
         hco:length      46709983 ;
@@ -28,7 +28,7 @@ hco:21q11.2
         rdfs:label      "21q11.2" ;
         rdfs:subClassOf hco:Cytoband .
 
-hco:21q11.2#GRCh38
+hco:21q11.2\#GRCh38
         rdf:type        hco:21q11.2 ;
         hco:build       hco:GRCh38 ;
         hco:bandtype    hco:Gneg ;
@@ -37,12 +37,12 @@ hco:21q11.2#GRCh38
                 faldo:begin      [
                         rdf:type         faldo:BothStrandsPosition ;
                         faldo:position   13000000 ;
-                        faldo:reference  hco:21#GRCh38
+                        faldo:reference  hco:21\#GRCh38
                 ] ;
                 faldo:end        [
                         rdf:type         faldo:BothStrandsPosition ;
                         faldo:position   15000000 ;
-                        faldo:reference  hco:21#GRCh38
+                        faldo:reference  hco:21\#GRCh38
                 ]
         ] .
 ```

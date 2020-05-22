@@ -33,7 +33,7 @@ versions.each do |ver|
           :to   => to.to_i,
           :cyto => cyto,
           :col  => col,
-          :ref  => "hco:#{num}##{ver}"
+          :ref  => "hco:#{num}\##{ver}"
         }
       end
     end
@@ -55,7 +55,7 @@ hash.each do |cyto, data|
   puts
   versions.each do |ver|
     h = data[ver]
-    puts "hco:#{cyto}##{ver}"
+    puts "hco:#{cyto}\##{ver}"
     puts "\trdf:type\thco:#{cyto} ;"
     puts "\thco:build\thco:#{ver} ;"
     puts "\thco:bandtype\t#{cytoband_type[h[:col]]} ;"

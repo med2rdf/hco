@@ -334,7 +334,7 @@ hco:10\/GRCh37
 			<http://grch37.ensembl.org/Homo_sapiens/Location/Chromosome?r=10> .
 
 hco:10\/GRCh38
-	rdf:type	hco:1 ;
+	rdf:type	hco:10 ;
 	hco:build	hco:GRCh38 ;
 	hco:length	133797422 ;
 	skos:altLabel	"GPC_000001302" ;

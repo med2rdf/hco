@@ -3,7 +3,6 @@
 # $ curl http://hgdownload.cse.ucsc.edu/goldenPath/hg19/database/cytoBand.txt.gz | gzip -dc - > cytoBand-GRCh37.txt
 # $ curl http://hgdownload.cse.ucsc.edu/goldenPath/hg38/database/cytoBand.txt.gz | gzip -dc - > cytoBand-GRCh38.txt
 # $ ruby cytoBand2ttl.rb > cytoBand.ttl
-# $ cat hco_head.owl cytoBand.ttl > hco.owl
 #
 
 hash = {}

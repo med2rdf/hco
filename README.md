@@ -47,6 +47,28 @@ hco:21q11.2\/GRCh38
         ] .
 ```
 
+## Update procedure
+
+To create the latest version of the ontology, first obtain the cytoBand data from UCSC and convert the data into RDF/Turtle.
+
+```
+$ curl http://hgdownload.cse.ucsc.edu/goldenPath/hg19/database/cytoBand.txt.gz | gzip -dc - > cytoBand-GRCh37.txt
+$ curl http://hgdownload.cse.ucsc.edu/goldenPath/hg38/database/cytoBand.txt.gz | gzip -dc - > cytoBand-GRCh38.txt
+$ ruby cytoBand2ttl.rb > cytoBand.ttl
+```
+
+Then, concatenate the header part of the ontology with the cytoBand data.
+
+```
+$ cat hco_head.ttl cytoBand.ttl > hco.tmp
+```
+
+Finallly, expand `hco:X\/GRChXX` into `<http://identifiers.org/hco/X/GRChXX>` for avoiding a triple store to treat it as `<http://identifiers.org/hco/X\/GRChXX>` (some triple store such as Virtuoso has an option to relax syntax rules for loading invalid data that sometimes causes further problem even for valid data).
+
+```
+$ rapper -i turtle -o turtle hco.tmp > hco.ttl
+```
+
 ### Contributors
 
 * Toshiaki Katayama (Database Center for Life Science)

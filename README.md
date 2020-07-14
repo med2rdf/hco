@@ -21,7 +21,7 @@ hco:21\/GRCh38
                         <http://www.ensembl.org/Homo_sapiens/Location/Chromosome?r=21> .
 ```
 
-Also, `hco:Cytoband` is inherited by each cytoband class such as `hco:21q11.2` and an instance of it such as `hco:21q11.2#GRCh38` has the [FALDO](http://biohackathon.org/resource/faldo) location on a chromosome and `hco:bandtype` such as `hco:Gneg` which stands for a nonstaining G-negative light band.
+Also, `hco:Cytoband` is inherited by each cytoband class such as `hco:21q11.2` and an instance of it such as `hco:21q11.2\/GRCh38` has the [FALDO](http://biohackathon.org/resource/faldo) location on a chromosome and `hco:bandtype` such as `hco:Gneg` which stands for a nonstaining G-negative light band.
 
 ```
 hco:21q11.2

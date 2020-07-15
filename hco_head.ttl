@@ -14,7 +14,7 @@
 	rdf:type	owl:Ontology ;
 	dct:license	<http://creativecommons.org/publicdomain/zero/1.0/> ;
 	rdfs:seeAlso	<https://github.com/med2rdf/hco/> ;
-	owl:versionInfo "2020-07-14"^^xsd:date .
+	owl:versionInfo "2020-07-15"^^xsd:date .
 
 hco:HumanChromosome
 	rdf:type	owl:Class ;
@@ -41,43 +41,43 @@ hco:CytobandType
 	skos:definition	"Cytoband types including Giemsa-banding annotations" .
 
 hco:build
-	rdfs:type	owl:ObjectProperty ;
+	rdf:type	owl:ObjectProperty ;
 	rdfs:label	"build" ;
 	rdfs:domain	hco:HumanChromosome ;
 	rdfs:range	hco:GenomeBuild .
 
 hco:insdc
-	rdfs:type	owl:ObjectProperty ;
+	rdf:type	owl:ObjectProperty ;
 	rdfs:label	"INSDC" ;
 	rdfs:domain	hco:HumanChromosome ;
 	rdfs:range	rdfs:Resource .
 
 hco:refseq
-	rdfs:type	owl:ObjectProperty ;
+	rdf:type	owl:ObjectProperty ;
 	rdfs:label	"RefSeq" ;
 	rdfs:domain	hco:HumanChromosome ;
 	rdfs:range	rdfs:Resource .
 
 hco:ucsc
-	rdfs:type	owl:ObjectProperty ;
+	rdf:type	owl:ObjectProperty ;
 	rdfs:label	"UCSC" ;
 	rdfs:domain	hco:HumanChromosome ;
 	rdfs:range	rdfs:Resource .
 
 hco:ensembl
-	rdfs:type	owl:ObjectProperty ;
+	rdf:type	owl:ObjectProperty ;
 	rdfs:label	"Ensembl" ;
 	rdfs:domain	hco:HumanChromosome ;
 	rdfs:range	rdfs:Resource .
 
 hco:length
-	rdfs:type	owl:DatatypeProperty ;
+	rdf:type	owl:DatatypeProperty ;
 	rdfs:label	"length" ;
 	rdfs:domain	hco:GenomeBuild ;
 	rdfs:range	xsd:integer .
 
 hco:bandtype
-	rdfs:type	owl:DatatypeProperty ;
+	rdf:type	owl:DatatypeProperty ;
 	rdfs:label	"cytoband type" ;
 	rdfs:domain	hco:Cytoband ;
 	rdfs:range	hco:CytobandType .

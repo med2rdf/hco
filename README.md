@@ -2,7 +2,7 @@
 
 The Human Chromosome Ontology (HCO) provides simple and stable URIs for human reference genome versions to semantically identify human chromosomes.
 
-Basic class `hco:HumanChromosome` is inherited by each chromosome class such as `hco:21` and `hco:GenomeBuild` is inherited by each build version such as `hco:GRCh38`. Then, for example, the human chromosome 21 of the GRCh38 version is represented as `hco:21\/GRCh38` (<http://identifiers.org/hco/21/GRCh38>) which is defined as an instance of `hco:21` with build version `hco:GRCh38`. Each instance of a chromosome has links to external resources such as INSDC, RefSeq, UCSC etc. so that users can be navigated to the chromosome sequence and its annotations.
+Basic class `hco:HumanChromosome` is inherited by each chromosome class such as `hco:21` and `hco:GenomeBuild` is inherited by each build version such as `hco:GRCh38`. Then, for example, the human chromosome 21 of the GRCh38 version is represented as `hco:21\/GRCh38` (<http://biohackathon.org/resource/hco/21/GRCh38>) which is defined as an instance of `hco:21` with build version `hco:GRCh38`. Each instance of a chromosome has links to external resources such as INSDC, RefSeq, UCSC etc. so that users can be navigated to the chromosome sequence and its annotations.
 
 ```
 hco:21
@@ -63,7 +63,7 @@ Then, concatenate the header part of the ontology with the cytoBand data.
 $ cat hco_head.ttl cytoBand.ttl > hco.tmp
 ```
 
-Finallly, expand `hco:X\/GRChXX` into `<http://identifiers.org/hco/X/GRChXX>` for avoiding a triple store to treat it as `<http://identifiers.org/hco/X\/GRChXX>` (some triple store such as Virtuoso has an option to relax syntax rules for loading invalid data that sometimes causes further problem even for valid data).
+Finallly, expand `hco:X\/GRChXX` into `<http://biohackathon.org/resource/hco/X/GRChXX>` for avoiding a triple store to treat it as `<http://biohackathon.org/resource/hco/X\/GRChXX>` (some triple store such as Virtuoso has an option to relax syntax rules for loading invalid data that sometimes causes further problem even for valid data).
 
 ```
 $ rapper -i turtle -o turtle hco.tmp > hco.ttl

@@ -6,15 +6,15 @@
 @prefix skos:  <http://www.w3.org/2004/02/skos/core#> .
 @prefix obo:   <http://purl.obolibrary.org/obo/> .
 @prefix faldo: <http://biohackathon.org/resource/faldo#> .
-@prefix hco:   <http://identifiers.org/hco/> .
+@prefix hco:   <http://biohackathon.org/resource/hco/> .
 
 # Base classes and properties
 
-<http://identifiers.org/hco/>
+<http://biohackathon.org/resource/hco/>
 	rdf:type	owl:Ontology ;
 	dct:license	<http://creativecommons.org/publicdomain/zero/1.0/> ;
 	rdfs:seeAlso	<https://github.com/med2rdf/hco/> ;
-	owl:versionInfo "2018-04-09"^^xsd:date .
+	owl:versionInfo "2020-07-14"^^xsd:date .
 
 hco:HumanChromosome
 	rdf:type	owl:Class ;

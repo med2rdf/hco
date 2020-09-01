@@ -6,11 +6,11 @@
 @prefix skos:  <http://www.w3.org/2004/02/skos/core#> .
 @prefix obo:   <http://purl.obolibrary.org/obo/> .
 @prefix faldo: <http://biohackathon.org/resource/faldo#> .
-@prefix hco:   <http://identifiers.org/hco/> .
+@prefix hco:   <http://biohackathon.org/resource/hco/> .
 
 # Base classes and properties
 
-<http://identifiers.org/hco/>
+<http://biohackathon.org/resource/hco/>
 	rdf:type	owl:Ontology ;
 	dct:license	<http://creativecommons.org/publicdomain/zero/1.0/> ;
 	rdfs:seeAlso	<https://github.com/med2rdf/hco/> ;
@@ -85,6 +85,7 @@ hco:bandtype
 # Human chromosome classes and instances
 
 hco:1
+	rdf:type	owl:Class ;
 	rdfs:label	"Human chromosome 1" ;
 	rdfs:subClassOf	hco:HumanChromosome .
 
@@ -111,6 +112,7 @@ hco:1\/GRCh38
 			<http://www.ensembl.org/Homo_sapiens/Location/Chromosome?r=1> .
 
 hco:2
+	rdf:type	owl:Class ;
 	rdfs:label	"Human chromosome 2" ;
 	rdfs:subClassOf	hco:HumanChromosome .
 
@@ -137,6 +139,7 @@ hco:2\/GRCh38
 			<http://www.ensembl.org/Homo_sapiens/Location/Chromosome?r=2> .
 
 hco:3
+	rdf:type	owl:Class ;
 	rdfs:label	"Human chromosome 3" ;
 	rdfs:subClassOf	hco:HumanChromosome .
 
@@ -163,6 +166,7 @@ hco:3\/GRCh38
 			<http://www.ensembl.org/Homo_sapiens/Location/Chromosome?r=3> .
 
 hco:4
+	rdf:type	owl:Class ;
 	rdfs:label	"Human chromosome 4" ;
 	rdfs:subClassOf	hco:HumanChromosome .
 
@@ -189,6 +193,7 @@ hco:4\/GRCh38
 			<http://www.ensembl.org/Homo_sapiens/Location/Chromosome?r=4> .
 
 hco:5
+	rdf:type	owl:Class ;
 	rdfs:label	"Human chromosome 5" ;
 	rdfs:subClassOf	hco:HumanChromosome .
 
@@ -215,6 +220,7 @@ hco:5\/GRCh38
 			<http://www.ensembl.org/Homo_sapiens/Location/Chromosome?r=5> .
 
 hco:6
+	rdf:type	owl:Class ;
 	rdfs:label	"Human chromosome 6" ;
 	rdfs:subClassOf	hco:HumanChromosome .
 
@@ -241,6 +247,7 @@ hco:6\/GRCh38
 			<http://www.ensembl.org/Homo_sapiens/Location/Chromosome?r=6> .
 
 hco:7
+	rdf:type	owl:Class ;
 	rdfs:label	"Human chromosome 7" ;
 	rdfs:subClassOf	hco:HumanChromosome .
 
@@ -267,6 +274,7 @@ hco:7\/GRCh38
 			<http://www.ensembl.org/Homo_sapiens/Location/Chromosome?r=7> .
 
 hco:8
+	rdf:type	owl:Class ;
 	rdfs:label	"Human chromosome 8" ;
 	rdfs:subClassOf	hco:HumanChromosome .
 
@@ -293,6 +301,7 @@ hco:8\/GRCh38
 			<http://www.ensembl.org/Homo_sapiens/Location/Chromosome?r=8> .
 
 hco:9
+	rdf:type	owl:Class ;
 	rdfs:label	"Human chromosome 9" ;
 	rdfs:subClassOf	hco:HumanChromosome .
 
@@ -319,6 +328,7 @@ hco:9\/GRCh38
 			<http://www.ensembl.org/Homo_sapiens/Location/Chromosome?r=9> .
 
 hco:10
+	rdf:type	owl:Class ;
 	rdfs:label	"Human chromosome 10" ;
 	rdfs:subClassOf	hco:HumanChromosome .
 
@@ -345,6 +355,7 @@ hco:10\/GRCh38
 			<http://www.ensembl.org/Homo_sapiens/Location/Chromosome?r=10> .
 
 hco:11
+	rdf:type	owl:Class ;
 	rdfs:label	"Human chromosome 11" ;
 	rdfs:subClassOf	hco:HumanChromosome .
 
@@ -371,6 +382,7 @@ hco:11\/GRCh38
 			<http://www.ensembl.org/Homo_sapiens/Location/Chromosome?r=11> .
 
 hco:12
+	rdf:type	owl:Class ;
 	rdfs:label	"Human chromosome 12" ;
 	rdfs:subClassOf	hco:HumanChromosome .
 
@@ -397,6 +409,7 @@ hco:12\/GRCh38
 			<http://www.ensembl.org/Homo_sapiens/Location/Chromosome?r=12> .
 
 hco:13
+	rdf:type	owl:Class ;
 	rdfs:label	"Human chromosome 13" ;
 	rdfs:subClassOf	hco:HumanChromosome .
 
@@ -423,6 +436,7 @@ hco:13\/GRCh38
 			<http://www.ensembl.org/Homo_sapiens/Location/Chromosome?r=13> .
 
 hco:14
+	rdf:type	owl:Class ;
 	rdfs:label	"Human chromosome 14" ;
 	rdfs:subClassOf	hco:HumanChromosome .
 
@@ -449,6 +463,7 @@ hco:14\/GRCh38
 			<http://www.ensembl.org/Homo_sapiens/Location/Chromosome?r=14> .
 
 hco:15
+	rdf:type	owl:Class ;
 	rdfs:label	"Human chromosome 15" ;
 	rdfs:subClassOf	hco:HumanChromosome .
 
@@ -475,6 +490,7 @@ hco:15\/GRCh38
 			<http://www.ensembl.org/Homo_sapiens/Location/Chromosome?r=15> .
 
 hco:16
+	rdf:type	owl:Class ;
 	rdfs:label	"Human chromosome 16" ;
 	rdfs:subClassOf	hco:HumanChromosome .
 
@@ -501,6 +517,7 @@ hco:16\/GRCh38
 			<http://www.ensembl.org/Homo_sapiens/Location/Chromosome?r=16> .
 
 hco:17
+	rdf:type	owl:Class ;
 	rdfs:label	"Human chromosome 17" ;
 	rdfs:subClassOf	hco:HumanChromosome .
 
@@ -527,6 +544,7 @@ hco:17\/GRCh38
 			<http://www.ensembl.org/Homo_sapiens/Location/Chromosome?r=17> .
 
 hco:18
+	rdf:type	owl:Class ;
 	rdfs:label	"Human chromosome 18" ;
 	rdfs:subClassOf	hco:HumanChromosome .
 
@@ -553,6 +571,7 @@ hco:18\/GRCh38
 			<http://www.ensembl.org/Homo_sapiens/Location/Chromosome?r=18> .
 
 hco:19
+	rdf:type	owl:Class ;
 	rdfs:label	"Human chromosome 19" ;
 	rdfs:subClassOf	hco:HumanChromosome .
 
@@ -579,6 +598,7 @@ hco:19\/GRCh38
 			<http://www.ensembl.org/Homo_sapiens/Location/Chromosome?r=19> .
 
 hco:20
+	rdf:type	owl:Class ;
 	rdfs:label	"Human chromosome 20" ;
 	rdfs:subClassOf	hco:HumanChromosome .
 
@@ -605,6 +625,7 @@ hco:20\/GRCh38
 			<http://www.ensembl.org/Homo_sapiens/Location/Chromosome?r=20> .
 
 hco:21
+	rdf:type	owl:Class ;
 	rdfs:label	"Human chromosome 21" ;
 	rdfs:subClassOf	hco:HumanChromosome .
 
@@ -631,6 +652,7 @@ hco:21\/GRCh38
 			<http://www.ensembl.org/Homo_sapiens/Location/Chromosome?r=21> .
 
 hco:22
+	rdf:type	owl:Class ;
 	rdfs:label	"Human chromosome 22" ;
 	rdfs:subClassOf	hco:HumanChromosome .
 
@@ -657,6 +679,7 @@ hco:22\/GRCh38
 			<http://www.ensembl.org/Homo_sapiens/Location/Chromosome?r=22> .
 
 hco:X
+	rdf:type	owl:Class ;
 	rdfs:label	"Human chromosome X" ;
 	rdfs:subClassOf	hco:HumanChromosome .
 
@@ -683,6 +706,7 @@ hco:X\/GRCh38
 			<http://www.ensembl.org/Homo_sapiens/Location/Chromosome?r=X> .
 
 hco:Y
+	rdf:type	owl:Class ;
 	rdfs:label	"Human chromosome Y" ;
 	rdfs:subClassOf	hco:HumanChromosome .
 
@@ -709,6 +733,7 @@ hco:Y\/GRCh38
 			<http://www.ensembl.org/Homo_sapiens/Location/Chromosome?r=Y> .
 
 hco:MT
+	rdf:type	owl:Class ;
 	rdfs:label	"Human mitochondrion genome" ;
 	rdfs:subClassOf	hco:HumanChromosome .
 
@@ -731,6 +756,7 @@ hco:MT\/GRCh38
 # Human genome build classes and instances
 
 hco:GRCh37
+	rdf:type	owl:Class ;
 	rdfs:label	"GRCh37" ;
 	skos:definition	"Genome Reference Consortium Human Build 37" ;
 	skos:altLabel	"hg19" ;
@@ -755,6 +781,7 @@ hco:GRCh37.p13
 	rdf:type	hco:GRCh37 .
 
 hco:GRCh38
+	rdf:type	owl:Class ;
 	rdfs:label	"GRCh38" ;
 	skos:definition	"Genome Reference Consortium Human Build 38" ;
 	skos:altLabel	"hg38" ;

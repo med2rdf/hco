@@ -42,6 +42,7 @@ end
 
 hash.each do |cyto, data|
   puts "hco:#{cyto}"
+  puts "\trdf:type\towl:Class ;"
   puts "\trdfs:label\t\"#{cyto}\" ;"
   puts "\trdfs:subClassOf\thco:Cytoband ."
   puts

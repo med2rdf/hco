@@ -29,7 +29,7 @@ versions.each do |ver|
         cyto = "#{num}#{band}"
         hash[cyto] ||= {}
         hash[cyto][ver] = {
-          :from => from.to_i,
+          :from => from.to_i + 1,
           :to   => to.to_i,
           :cyto => cyto,
           :col  => col,
